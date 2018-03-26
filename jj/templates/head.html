@@ -1,0 +1,1813 @@
+<meta charset="utf-8" />
+<title>渔管理</title>
+<meta name="description" content="Dashboard" />
+<meta name=renderer content=webkit>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="shortcut icon" href="/static/img/logo.ico?6.1:201803070430" type="image/x-icon">
+<link id="beyond-link" href="/static/css/beyond.min.css" rel="stylesheet" type="text/css" />
+<link href="/static/css/select2.css" rel="stylesheet">
+<link rel="stylesheet" href="/static/css/calendar.css?6.1:201803070430">
+<link rel="stylesheet" href="/static/css/Nxin.css?6.1:201803070430" />
+<link href="/static/css/bootstrap.min.css" rel="stylesheet" />
+<link href="/static/css/tip-skyblue.css" rel="stylesheet" />
+<link href="/static/css/tip-yellow.css" rel="stylesheet" />
+<link id="bootstrap-rtl-link" href="" rel="stylesheet" />
+<link href="/static/css/font-awesome.min.css" rel="stylesheet" />
+<link href="/static/css/weather-icons.min.css" rel="stylesheet" />
+<link rel="stylesheet" href="/static/css/layer.css">
+<link rel="stylesheet" href="/static/css/public.css">
+<link rel="stylesheet" href="http://ylw.nxin.com/Scripts/layer/skin/default/layer.css?v=3.0.3303" id="layuicss-skinlayercss">
+<link href="/static/css/demo.min.css" rel="stylesheet" />
+<link href="/static/css/typicons.min.css" rel="stylesheet" />
+<link href="/static/css/animate.min.css" rel="stylesheet" />
+<link id="skin-link" href="" rel="stylesheet" type="text/css" />
+<link href="/static/css/bootstrap-table.css" rel="stylesheet"/>
+<link href="/static/css/bootstrap-select.css" rel="stylesheet"/>
+<link href="/static/css/bootstrap-editable.css" rel="stylesheet"/>
+<link href="/static/css/font-awesome.min.css" rel="stylesheet"/>
+<link href="/static/css/custom-ico-fonts.css" rel="stylesheet"/>
+<link href="/static/css/site.css" rel="stylesheet"/>
+<link href="/static/css/style-responsive.css" rel="stylesheet"/>
+<link href="/static/css/nxinModel.css" rel="stylesheet"/>
+<script src="/static/js/jquery-1.10.2.js"></script>
+<script src="/static/js/jquery-2.0.3.min.js"></script>
+<script src="/static/js/jquery.query.js"></script>
+<script src="/static/js/beyond.min.js?6.1:201803070430"></script>
+<script src="/static/js/bootstrap.min.js?6.1:201803070430"></script>
+<script src="/static/js/bootstrap-select.js"></script>
+<script src="/static/js/bootstrap-table.js"></script>
+<script src="/static/js/bootstrap-table-zh-CN.js"></script>
+<script src="/static/js/bootstrapValidator.js"></script>
+<script src="/static/js/calendar.js"></script>
+<script src="/static/js/calendar.js?6.1:201803070430"></script>
+<script src="/static/js/common.js?6.1:201803070430" charset="utf-8"></script>
+<script src="/static/js/defaults-zh_CN.js"></script>
+<script src="/static/js/echarts.min.js"></script>
+<script src="/static/js/highcharts.js?6.1:201803070430"></script>
+<script src="/static/js/jquery.leoweather.min.js"></script>
+<script src="/static/js/jquery.min.js"></script>
+<script src="/static/js/jquery.nicescroll.js"></script>
+<script src="/static/js/jquery.poshytip.js"></script>
+<script src="/static/js/jquery.sparkline.js"></script>
+<script src="/static/js/jquery.unobtrusive-ajax.js"></script>
+
+<script src="/static/js/layer.js"></script>
+<script src="/static/js/modal.js"></script>
+<script src="/static/js/modernizr-2.6.2.js"></script>
+<script src="/static/js/Mytool.js"></script>
+<script src="/static/js/public.js"></script>
+<script  src="/static/js/select2.full.js"></script>
+<script src="/static/js/skins.min.js"></script>
+<script src="/static/js/sparkline-init.js"></script>
+<script src="/static/js/WdatePicker.js"></script>
+<script  src="/static/js/zh-CN.js"></script>
+
+<script>
+    $(function () {
+        var many = $('li .active').length;
+        if (many == 0) {
+            $("#sidebar").is(":visible") || $("#sidebar").addClass("hide");
+            $("#sidebar").addClass("menu-compact");
+            $('#MenuSideBig').addClass('dis-none');
+            $('#MenuSideSmall').removeClass('dis-none');
+            n = $("#sidebar").hasClass("menu-compact");
+            n && $(".open > .submenu").removeClass("open");
+            $('.MainLeft').removeClass('CgW');
+            $('.page-content').removeClass('backsize');
+        } else {
+            $("#sidebar").is(":visible") || $("#sidebar").removeClass("hide");
+            $("#sidebar").removeClass("menu-compact");
+            $('#MenuSideBig').removeClass('dis-none');
+            $('#MenuSideSmall').addClass('dis-none');
+            n = $("#sidebar").hasClass("menu-compact");
+            n && $(".open > .submenu").addClass("open");
+            $('.MainLeft').addClass('CgW');
+            $('.page-content').addClass('backsize');
+        }
+
+    })
+</script>
+<script type="text/javascript">
+
+    function timer(opj) {
+        $(opj).find('ul').animate({
+            marginTop: "-3.5rem"
+        }, 500, function () {
+            $(this).css({ marginTop: "0.7rem" }).find("li:first").appendTo(this);
+        })
+    }
+    $(function () {
+        var num = $('.notice_active').find('li').length;
+        if (num > 1) {
+            var time = setInterval('timer(".notice_active")', 3500);
+            $('.gg_more a').mousemove(function () {
+                clearInterval(time);
+            }).mouseout(function () {
+                time = setInterval('timer(".notice_active")', 3500);
+            });
+        }
+
+        $(".news_ck").click(function () {
+            location.href = $(".notice_active .notice_active_ch").children(":input").val();
+        })
+    });
+</script>
+<script>
+    // If you want to draw your charts with Theme colors you must run initiating charts after that current skin is loaded
+    $(window).bind("load", function () {
+
+        /*Sets Themed Colors Based on Themes*/
+        themeprimary = getThemeColorFromCss('themeprimary');
+        themesecondary = getThemeColorFromCss('themesecondary');
+        themethirdcolor = getThemeColorFromCss('themethirdcolor');
+        themefourthcolor = getThemeColorFromCss('themefourthcolsor');
+        themefifthcolor = getThemeColorFromCss('themefifthcolor');
+
+        //InitiateChartJS.init();
+    });
+</script>
+<script src="/static/js/calendar.js"></script>
+<script src="/static/js/calendar.js?6.1:201803070430"></script>
+<script>
+
+    var w,h;
+    $(window).resize(function () {          //当浏览器大小变化时
+//  alert($(window).height());          //浏览器时下窗口可视区域高度
+//  alert($(document).height());        //浏览器时下窗口文档的高度
+//  alert($(document.body).height());   //浏览器时下窗口文档body的高度
+//  alert($(document.body).outerHeight(true)); //浏览器时下窗口文档body的总高度 包括border padding margin
+        $(document.body).css({
+            "overflow-x": "auto",
+            "overflow-y": "auto"
+        });
+    });
+    resizeCanvas();
+    function resizeCanvas() {
+        w = window.innerWidth/6;
+        h = window.innerHeight/3;
+    }
+    //	alert(w + "::" + h);
+    var a = 300;
+    var bb;
+    bb = '[{"date":"2017/07/24","value":"evead","flag":"0"}]';
+    bb = JSON.parse(bb);
+    //console.log(bb);
+    $('#ca').calendar({
+        width: a,
+        height: 180,
+        data: bb,
+        onSelected: function (view, date, data) {
+            var select_Date = new Date(date);
+            var select_year = select_Date.getFullYear();
+            var select_month = select_Date.getMonth() + 1;
+            var select_day = select_Date.getDate();
+            select_Date = select_year + "-" + select_month + "-" + select_day;
+            //console.log('view:' + view);
+            //console.log('date:' + date);
+            //console.log('data:' + (data || 'None'));
+            $.ajax({
+                url: '/Main/GetDetailByDay',
+                dataType: 'json',
+                data: {
+                    'companyid': CompanyID,
+                    'day': select_Date
+                },
+                success: function (data) {
+                    //console.log(data);
+                    $('#Candl_1').html(data[1].amount + ((data[1].unit) ? data[1].unit : '包'));
+                    $('#Candl_2').html(data[0].amount + ((data[0].unit) ? data[0].unit : '斤'));
+                    $('#Candl_3').html(data[2].amount + ((data[2].unit) ? data[2].unit : '尾'));
+
+
+                },
+                error: function (xhr, status, error) {
+
+                }
+            });//ajax end
+        }
+    });
+
+
+    var now_Date = new Date();
+    var now_year = now_Date.getFullYear();
+    var now_month = now_Date.getMonth() + 1;
+    var now_day = now_Date.getDate();
+    now_Date = now_year + "-" + now_month + "-" + now_day;
+    $.ajax({
+        url: '/Main/GetDetailByDay',
+        dataType: 'json',
+        data: {
+            'companyid': CompanyID,
+            'day': now_Date
+        },
+        success: function (data) {
+            //console.log(data);
+            $('#Candl_1').html(data[1].amount + ((data[1].unit) ? data[1].unit : '包'));
+            $('#Candl_2').html(data[0].amount + ((data[0].unit) ? data[0].unit : '斤'));
+            $('#Candl_3').html(data[2].amount + ((data[2].unit) ? data[2].unit : '尾'));
+        },
+        error: function (xhr, status, error) {
+
+        }
+    });//ajax end
+
+
+</script>
+<script>
+    var t = null;
+    t = setTimeout(time, 1000);//開始运行
+    function time() {
+        clearTimeout(t);//清除定时器
+        dt = new Date();
+        var y = dt.getFullYear();
+        var mo = dt.getMonth() + 1;
+        if (mo < 10) {
+            mo = "0" + mo;
+        }
+        var d = dt.getDate();
+        if (d < 10) {
+            d = "0" + d;
+        }
+        var h = dt.getHours();//获取时
+        if (h < 10) {
+            h = "0" + h;
+        }
+        var m = dt.getMinutes();//获取分
+        if (m < 10) {
+            m = "0" + m;
+        }
+        var s = dt.getSeconds();//获取秒
+        if (s < 10) {
+            s = "0" + s;
+        }
+        document.getElementById("GetTime").innerHTML = y + "-" + mo + "-" + d + " " + h + ":" + m + ":" + s;
+        t = setTimeout(time, 1000); //设定定时器，循环运行
+    }
+
+</script>
+<script>
+    var PayS_chart, PayB_chart, RecS_chart, RecB_chart, SumC_chart , PondArea , PondNum , TotalArea = 0, TotalNum = 0;
+    var payS_data = [], payB_Xdata = [], payB_Y = [], recS_data = [], recB_Xdata = [], recB_YaM = [], recB_YnQ = [], sumC_Xdata = [], sumC_YP = [], sumC_YR = [], SumLineZC = [], SumLineSY = [], Acreage = [], Numb = [];
+
+    $(document).ready(function () {
+        getPondList();
+        GetPondAcreage();
+        GetPondNum();
+
+        SumC_chart = new Highcharts.Chart({
+            backgroundColor: 'rgba(0,0,0,0)',
+            chart: {
+                renderTo: 'SumC_chart',
+                marginTop: 10,
+            },
+            credits: {
+                enabled: false
+            },
+            title: {
+                text: "", //'月收益支出对比图',
+                floating:true
+            },
+            xAxis: {
+                categories: sumC_Xdata,
+                title: {
+                    text: null
+                },
+                labels: {
+                    style: {
+                        color: '#909090'//颜色
+                    }
+                }
+            },
+            yAxis: {
+                min: 0,
+                title: {
+                    text: '单位 (元)',
+                    align: 'high'
+                },
+                labels: {
+                    overflow: 'justify',
+                    style: {
+                        color: '#909090'//颜色
+                    }
+                },
+                gridLineColor: '#f2f2f2'
+            },
+            tooltip: {
+                pointFormat: '{point.y}元 <b>'
+            },
+            legend: {
+                enabled: false,
+                verticalAlign: 'top',
+                align: 'right',
+                floating: true,
+                y: -10,
+                symbolWidth: 12,
+                symbolHeight: 12
+            },
+            plotOptions: {
+                spline: {
+                    lineWidth: 1,
+                    fillOpacity: 0.1,
+                    shadow: false
+                },
+                column: {
+                    pointWidth: 16,
+                }
+            },
+
+
+            series: [{
+                name: '支出',
+                data: sumC_YP,
+                type: "column",
+                color: '#5A8BFF'
+            }, {
+                name: '收益',
+                data: sumC_YR,
+                type: "column",
+                color: '#FFA897'
+            }, {
+                type: 'spline',
+                name: '总支出',
+                data: SumLineZC,
+                color: '#5A8BFF'
+            }, {
+                type: 'spline',
+                name: '总收益',
+                data: SumLineSY,
+                color: '#FFA897',
+            }]
+        })
+
+        PondArea = new Highcharts.Chart({
+            chart: {
+                renderTo: 'PondArea',
+                plotBackgroundColor: null,
+                plotBorderWidth: null,
+                plotShadow: false,
+                spacing: [-10, 0, 0, 0]
+            },
+            credits: {
+                enabled: false
+            },
+            title: {
+                floating: true,
+                text: '总面积<br />' + parseFloat(parseFloat(TotalArea).toFixed(2)),
+                style: {
+                    "fontSize": "14px"
+                }
+            },
+            tooltip: {
+                pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+            },
+            colors: ['#9AEED1', '#FFA897', '#89C3F8', '#BC8DEE',
+                '#71C27D', '#6B8CDA', '#FF9655', '#FFF263', '#6AF9C4'],
+            plotOptions: {
+                pie: {
+                    allowPointSelect: true,
+                    cursor: 'pointer',
+                    showInLegend: true,
+                    size: '100%',
+                    dataLabels: {
+                        enabled: false,
+                        format: '<b>{point.name}</b>: {point.percentage:.1f}',
+                        style: {
+                            color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black'
+                        }
+                    },
+                    //point: {
+                    //    events: {
+                    //        mouseOver: function (e) {
+                    //            chart1.setTitle({
+                    //                text: e.target.name + '\t' + e.target.y
+                    //            });
+                    //        }
+                    //    }
+                    //},
+                }
+            },
+            legend: {
+                enabled: true,
+                itemStyle: {
+                    color: '#555'
+                },
+                layout: 'horizontal',// vertical
+                align: 'center',
+                verticalAlign: 'bottom',
+                symbolWidth: 12,
+                symbolHeight: 12,
+                itemGap: 20,
+                selectedMode: false
+            },
+            series: [{
+                type: 'pie',
+                innerSize: '70%',
+                name: '塘口面积',
+                data: Acreage
+            }]
+        }, function (c) {
+            // 环形图圆心
+            var centerY = c.series[0].center[1],
+                titleHeight = parseInt(c.title.styles.fontSize);
+            c.setTitle({
+                y: centerY + titleHeight / 2 - 5
+            });
+            chart1 = c;
+        });
+
+        PondNum = new Highcharts.Chart({
+            chart: {
+                renderTo: 'PondNum',
+                plotBackgroundColor: null,
+                plotBorderWidth: null,
+                plotShadow: false,
+                spacing: [-10, 0, 0, 0]
+            },
+            credits: {
+                enabled: false
+            },
+            title: {
+                floating: true,
+                text: '总数量<br />' + TotalNum,
+                style: {
+                    "fontSize": "14px"
+                }
+            },
+            tooltip: {
+                pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+            },
+            colors: ['#9AEED1', '#FFA897', '#89C3F8', '#BC8DEE',
+                '#71C27D', '#6B8CDA', '#FF9655', '#FFF263', '#6AF9C4'],
+            plotOptions: {
+                pie: {
+                    allowPointSelect: true,
+                    cursor: 'pointer',
+                    showInLegend: true,
+                    size: '100%',
+                    dataLabels: {
+                        enabled: false,
+                        format: '<b>{point.name}</b>: {point.percentage:.1f}',
+                        style: {
+                            color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black'
+                        }
+                    },
+                    //point: {
+                    //    events: {
+                    //        mouseOver: function (e) {
+                    //            chart2.setTitle({
+                    //                text: e.target.name + '\t' + e.target.y
+                    //            });
+                    //        }
+                    //    }
+                    //},
+                }
+            },
+            legend: {
+                enabled: true,
+                itemStyle: {
+                    color: '#555'
+                },
+                layout: 'horizontal',// vertical
+                align: 'center',
+                verticalAlign: 'bottom',
+                symbolWidth: 12,
+                symbolHeight: 12,
+                itemGap: 20,
+                selectedMode: false
+            },
+            series: [{
+                type: 'pie',
+                innerSize: '70%',
+                size:'100%',
+                name: '塘口数量',
+                data: Numb
+            }]
+        }, function (c) {
+            // 环形图圆心
+            var centerY = c.series[0].center[1],
+                titleHeight = parseInt(c.title.styles.fontSize);
+            c.setTitle({
+                y: centerY + titleHeight / 2 - 5
+            });
+            chart2 = c;
+        });
+        search();
+    });
+    //收益  支出  成本（支出/出塘总重）  净收益（收益-指出) 亩净收益（净收益/塘口面积）  饲料用量  系数（饲料用量/出塘总重） 出塘总重
+    var sumReceipts = 0, sumPay = 0, ben = 0, poReceipts = 0, muReceipts = 0, fodder = 0, xishu = 0, sumQuantity;
+    //加载塘口列表 默认全部是有设备塘口？
+    function getPondList() {
+        $.getJSON("/Chart/GetPondList",
+            { companyid: CompanyID },
+            function (data) {
+                //console.log(data);
+                $("#pondSelect option").remove();
+                if (data && data.type == 1) {
+                    var htmlstr = "<option value='0'> 全部 </option>";
+                    for (var i = 0; i < data.data.length; i++) {
+
+                        htmlstr += "<option value=" + data.data[i].PondID + " data-n='" + data.data[i].name + "'>" + data.data[i].cPondName + "</option>"
+                    }
+                    $("#pondSelect").append(htmlstr);
+                }
+            })
+    }
+
+    //function colorpick() {
+    //    var Arr_1 = new Array();
+    //    var Arr_2 = ["51D8FF,A3EAFF", "00F6FF,93FBFF", "7EEDA3,B3FDCB", "8B81EE,B3ABFF", "FF9898,FCC5C5", "FFAE00,FFE09C", "779EFC,A5BFFD", "FCDA53,FEEFB1", "BE97F6,DAC2FE", "FCB4C8,FED7E1"];
+    //    var n = Math.floor(Math.random() * Arr_2.length + 1) - 1;
+    //    //while (Arr_1.length < 10) {
+    //    //    var n = Math.floor(Math.random() * Arr_2.length + 1) - 1;
+    //    //    if ($.inArray(Arr_2[n], Arr_1) == -1) {
+    //    //        Arr_1.push(Arr_2[n]);
+    //    //    }
+
+    //    //    console.log(Arr_2[n]);
+    //    //    console.log(Arr_1);
+    //    //}
+    //    return Arr_2[n];
+    //}
+
+    function toPercent(point) {
+        var str = Number(point * 100).toFixed(1);
+        str = to1(str);
+        str += "%";
+        return str;
+    }
+
+    function GetReceiptsList() {
+        var time1 = new Date();
+        var Y = time1.getFullYear();
+        var M = time1.getMonth() + 1;
+        var D = time1.getDate();
+        $.ajax({
+            url: "/chart/GetReceiptsList",
+            data: {
+                CompanyID: CompanyID, PondID: '0', dStart: '2016-01-01', dEnd: Y + '-' + M + '-' + D
+            },
+            type: "Get",
+            async: false,
+            success: function (data) {
+                //$('#shouyi').html("");
+                //console.log(data);
+                var Getdata = JSON.parse(data.data);;
+                //console.log(Getdata);
+                var money_max = new Array();
+                var weight_max = new Array();
+                var Arr_2 = ["51D8FF,A3EAFF", "00F6FF,93FBFF", "7EEDA3,B3FDCB", "8B81EE,B3ABFF", "FF9898,FCC5C5", "FFAE00,FFE09C", "779EFC,A5BFFD", "FCDA53,FEEFB1", "BE97F6,DAC2FE", "FCB4C8,FED7E1"];
+                var str = '';
+                var clear = '<div class="clear"></div>';
+                for (var s in Getdata) {
+                    money_max.push(Getdata[s].namount);
+                    weight_max.push(Getdata[s].nweight);
+                }
+                var max_money = Math.max.apply(Math, money_max);
+                var max_weight = Math.max.apply(Math, weight_max);
+
+
+
+                var sumR = 0, sumQ = 0;
+                recS_data = [], recB_Xdata = [], recB_YaM = [], recB_YnQ = [];
+                //clearRec();
+                if (data && data.type == 1) {
+                    //制作highchair  算总数
+                    var d = eval(data.data);
+                    for (var i = 0; i < d.length; i++) {
+                        sumR += d[i].namount;
+                        sumQ += d[i].nweight;
+                        recS_data.push({ name: d[i].cspeciesname, value: d[i].namount });
+
+                        recB_Xdata.push(d[i].cspeciesname);
+                        recB_YaM.push(d[i].namount);
+                        recB_YnQ.push(d[i].nweight)
+                    }
+                    twopie('RecS_chart', recS_data,"收益构成");
+                    //console.log('------------------------------');
+                    //console.log(JSON.stringify(recS_data));
+
+                    var colors = [
+                        '#89C3F8',
+                        '#F89CF7',
+                        '#9AEED1',
+                        '#71C27D',
+                        '#6B8CDA',
+                        '#FFD965',
+                        '#FFA897',
+                        '#BC8DEE',
+                        '#FF9655',
+                        '#C1B429'
+                    ];
+
+                    var strul1 = '<ul class="fl" id="syul1" style="margin-top: 35px;"></ul>';
+                    var strul2 = '<ul class="fl" id="syul2" style="margin-top: 35px;"></ul>';
+                    var strul3 = '<ul class="fl" id="syul3" style="margin-top: 35px;"></ul>';
+                    var sylen = recS_data.length;
+                    if (sylen / 4 <= 1) {
+                        $('#sylegend').append(strul1);
+                    } else if (sylen / 4 <= 2 && sylen / 4 > 1) {
+                        $('#sylegend').append(strul1);
+                        $('#sylegend').append(strul2);
+                    } else if (sylen / 4 > 2) {
+                        $('#sylegend').append(strul1);
+                        $('#sylegend').append(strul2);
+                        $('#sylegend').append(strul3);
+                    }
+                    for (var i in recS_data) {
+                        var stt = '<li class="tal" style="margin-bottom: 10px;"><span style="background-color:' + colors[i] + '" class="legend"></span><span class="mr10 ml5">' + recS_data[i].name + '</span ><li>';
+                        if (i <= 3) {
+                            $('#syul1').append(stt);
+                        }
+                        if (i > 3 && i <= 7) {
+                            $('#syul2').append(stt);
+                        }
+                        if (i > 7) {
+                            $('#syul3').append(stt);
+                        }
+
+                    }
+                } else {
+                    $('#datasy').addClass('dis-none');
+                    $('#nonedatasy').removeClass('dis-none');
+                }
+                sumReceipts = sumR;
+                sumQuantity = sumQ;
+                var s = sumReceipts.toFixed(2);
+                s = to2(s);
+                $("#sumReceipts").text(s);
+
+                //ShownRec();
+            }
+        })
+    }
+
+    function ShownSum() {
+        //支出收益对比
+        SumC_chart.yAxis[0].setTitle({
+            text: null
+        });
+
+        SumC_chart.xAxis[0].categories = sumC_Xdata;//展示的横坐标
+        SumC_chart.addSeries({
+            type: "column",
+            name: "支出",
+            data: sumC_YP,//展示的纵坐标
+            color: '#5A8BFF',
+            dataLabels: { enabled: false }
+        }, false);
+
+        //console.log(JSON.stringify(sumC_Xdata));
+
+        SumC_chart.addSeries({
+            type: "column",
+            name: "收益",
+            data: sumC_YR,//展示的纵坐标
+            color: '#FFA897',
+            dataLabels: { enabled: false }
+        }, false);
+
+        //console.log(sumC_YR);
+
+        SumC_chart.addSeries({
+            type: 'spline',
+            name: "总支出",
+            data: SumLineZC,//展示的纵坐标
+            color: '#5A8BFF',
+            dashStyle: 'dash',
+            marker: {
+                radius: 0,
+                symbol: 'circle'
+            },
+            dataLabels: { enabled: false }
+        }, false);
+
+        SumC_chart.addSeries({
+            type: 'spline',
+            name: "总收益",
+            data: SumLineSY,//展示的纵坐标
+            color: '#FFA897',
+            dashStyle: 'dash',
+            marker: {
+                radius: 0,
+                symbol: 'circle'
+            },
+            dataLabels: { enabled: false }
+        }, false);
+
+
+        SumC_chart.redraw();
+
+
+
+    }
+    //支出
+    function GetPaymentList() {
+        var time1 = new Date();
+        var Y = time1.getFullYear();
+        var M = time1.getMonth() + 1;
+        var D = time1.getDate();
+        $.ajax({
+            url: "/chart/GetPaymentList",
+            data: { CompanyID: CompanyID, PondID: '0', dStart: '2016-01-01', dEnd: Y + '-' + M + '-' + D },
+            type: "Get",
+            async: false,
+            success: function (data) {
+                //$('#zhichu').html("");
+                //console.log(data);
+                var Getdata = data.data;
+                //console.log(Getdata);
+                var money_max = new Array();
+                var str = '';
+                var a = 0, b = 0, c = 0, d = 0, a_money = 0, b_money = 0, c_money = 0, d_money = 0;
+                var clear = '<div class="clear"></div>';
+                for (var s in Getdata) {
+                    money_max.push(Getdata[s].Value);
+                }
+                var max_money = Math.max.apply(Math, money_max);
+                //max_money = Math.max.apply(Math, money_max)/0.9;
+
+                for (var i in Getdata) {
+                    if (Getdata[i].Key == "放苗") {
+                        a = Getdata[i].Value;
+                        a_money = Getdata[i].Value / max_money;
+                        a_money = toPercent(a_money);
+                    } else if (Getdata[i].Key == "用药") {
+                        b = Getdata[i].Value;
+                        b_money = Getdata[i].Value / max_money;
+                        b_money = toPercent(b_money);
+                    } else if (Getdata[i].Key == "用料") {
+                        c = Getdata[i].Value;
+                        c_money = Getdata[i].Value / max_money;
+                        c_money = toPercent(c_money);
+                    } else if (Getdata[i].Key == "其他") {
+                        d = Getdata[i].Value;
+                        d_money = Getdata[i].Value / max_money;
+                        d_money = toPercent(d_money);
+                    }
+                }
+
+
+                var sumP = 0;
+                payS_data = [], payB_Xdata = [], payB_Y = [];
+                //clearPay();
+                if (data && data.type == 1) {
+                    //制作highchair  算总数
+                    if (data.data.length > 0) {
+                        for (var i = 0; i < data.data.length; i++) {
+                            sumP += data.data[i].Value;
+                            payS_data.push({name:data.data[i].Key ,value: data.data[i].Value });
+
+                            payB_Xdata.push(data.data[i].Key);
+                            payB_Y.push(data.data[i].Value);
+                            if (data.data[i].Key == "用料") {
+                                fodder = data.data[i].Mark;
+                            }
+                        }
+                        twopie('PayS_chart', payS_data,"支出构成");
+                        //console.log('**********************');
+                        //console.log(JSON.stringify(payS_data));
+                        var colorzx = [
+                            '#89C3F8',
+                            '#F89CF7',
+                            '#9AEED1',
+                            '#71C27D',
+                            '#6B8CDA',
+                            '#FFD965',
+                            '#FFA897',
+                            '#BC8DEE'
+                        ];
+                        var strul1 = '<ul class="fl w50p" id="zcul1" style="margin-top: 35px;"></ul>';
+                        var strul2 = '<ul class="fl w50p" id="zcul2" style="margin-top: 35px;"></ul>';
+                        var zclen = payS_data.length;
+                        console.log(zclen);
+                        console.log(payS_data);
+                        if (zclen / 4 <= 1) {
+                            $('#zclegend').append(strul1);
+                        } else if (zclen / 4 > 1) {
+                            $('#zclegend').append(strul1);
+                            $('#zclegend').append(strul2);
+                        }
+                        for (var i in payS_data) {
+                            var szc = '<li class="tal" style="margin-bottom: 10px;"><span style="background-color:' + colorzx[i] + '" class="legend"></span><span class="mr10 ml5">' + payS_data[i].name + '</span ><li>';
+                            if (i <= 3) {
+                                $('#zcul1').append(szc);
+                            }
+                            if (i > 3) {
+                                $('#zcul2').append(szc);
+                            }
+                        }
+                    }
+
+                } else {
+                    $('#datazc').addClass('dis-none');
+                    $('#nonedatazc').removeClass('dis-none');
+                }
+                sumPay = (sumP).toFixed(2);
+                sumPay = to2(sumPay);
+                //console.log("********************");
+                //console.log(payS_data);
+
+                $("#sumPay").text(sumPay);
+                if (fodder > 0) {
+                    $("#fodder").html('<font>' + fodder + '</font>');
+                    $("#fodder").parent().addClass("cblue");
+                } else {
+                    $("#fodder").html('<font>' + fodder + '</font>');
+                    $("#fodder").parent().addClass("cpink");
+                }
+
+                //ShownPay();
+            }
+        })
+    }
+
+    //年月统计
+    function GetSumList() {
+        var time1 = new Date();
+        var Y = time1.getFullYear();
+        var M = time1.getMonth() + 1;
+        var D = time1.getDate();
+        var first = 0;
+        var second = 0;
+        $.ajax({
+            url: "/chart/GetSumList",
+            data: { CompanyID: CompanyID, PondID: '0', Year: Y },
+            type: "Get",
+            async: false,
+            success: function (data) {
+                sumC_Xdata = [], sumC_YP = [], sumC_YR = [];
+                //clearSum();
+                if (data && data.type == 1) {
+                    //制作highchair  算总数
+                    if (data.data.length > 0) {
+                        for (var i = 0; i < data.data.length; i++) {
+                            sumC_Xdata.push(data.data[i].Key);
+                            sumC_YP.push(data.data[i].Value);
+                            first += data.data[i].Value;
+                            second += data.data[i].Mark;
+                            SumLineZC.push(Math.ceil(first));
+                            sumC_YR.push(data.data[i].Mark);
+                            SumLineSY.push(Math.ceil(second));
+                        }
+                    }
+                } else {
+                    //console.log(data);
+                }
+
+                ShownSum();
+            }
+        })
+    }
+
+    function GetPondAcreage() {
+        $.ajax({
+            url: "/chart/GetSpeciesPondArea",
+            data: {
+            },
+            type: "Get",
+            async: false,
+            success: function (data) {
+                //console.log(data);
+                var Getdata = data.data;
+                for (var i in Getdata) {
+                    var temp = new Array();
+                    temp.push((Getdata[i].cSpeciesName == null) ? "其他" : Getdata[i].cSpeciesName);
+                    temp.push(Getdata[i].nPondArea);
+                    TotalArea += Getdata[i].nPondArea;
+                    Acreage.push(temp);
+                }
+            }
+        })
+    }
+
+    function GetPondNum() {
+        $.ajax({
+            url: "/chart/GetSpeciesPondCount",
+            data: {
+            },
+            type: "Get",
+            async: false,
+            success: function (data) {
+                //console.log(data);
+                var Getdata = data.data;
+                for (var i in Getdata) {
+                    var temp = new Array();
+                    temp.push((Getdata[i].cSpeciesName == null) ? "其他" : Getdata[i].cSpeciesName);
+                    temp.push(Getdata[i].nPondCount);
+                    TotalNum += Getdata[i].nPondCount;
+                    Numb.push(temp);
+                }
+                //console.log(Numb);
+            }
+        })
+    }
+
+    function GetWeather() {
+        $.ajax({
+            url: "/Weather/GetWeather",
+            data: {
+                latitude: '',
+                longitude: '',
+                nxinAreaId: '',
+                queryType: 2
+            },
+            type: "Get",
+            async: false,
+            success: function (data) {
+                //console.log(data);
+                data = JSON.parse(data);
+                var Getdata = data.data;
+                console.log(Getdata);
+                var AreaAdd = Getdata.areaInfo.fullName;
+                $('#areaAdd').html(AreaAdd);
+                var daily_forecast = Getdata.daily_forecast;
+                var Now = Getdata.now;
+                var Tem = Now.tmp;
+                var Text = Now.cond.txt;
+                var Win = Now.wind.spd;
+                $('#WeatherPic')[0].src = '/Images/assets/img/Nxin/' + Text + '.png';
+                $('#Tem').html(((!Tem) ? '0' : Tem)  + '°C');
+                $('#Text').html((!Text) ? '-' : Text);
+                $('#Win').html('风速' + ((!Win) ? '-' : Win) + 'm/s');
+                for (var i in daily_forecast) {
+                    var day = daily_forecast[i].date.split("-")[2];
+                    var situation = daily_forecast[i].cond.txt_d;
+                    var tmpMax = daily_forecast[i].tmp.max;
+                    var tmpMin = daily_forecast[i].tmp.min;
+                    switch (i) {
+                        case "1":
+                            $('#Mon span')[1].children[0].src = '/Images/assets/img/Nxin/' + situation + 'S.png';
+                            $('#Mon span')[0].innerHTML = ((!day) ? '-' : day) + '日';
+                            $('#Mon span')[2].innerHTML = (!situation) ? '-' : situation;
+                            //$('#Mon span')[2].innerHTML = '风速' + ((!WindSpd) ? '-' : WindSpd) + 'm/s';
+                            $('#Mon span')[3].innerHTML = ((tmpMin == null || tmpMin == undefined) ? '-' : tmpMin) + '~' + ((tmpMax == null || tmpMax == undefined) ? '-' : tmpMax) + '°C';
+                            break;
+                        case "2":
+                            $('#Tue span')[1].children[0].src = '/Images/assets/img/Nxin/' + situation + 'S.png';
+                            $('#Tue span')[0].innerHTML = ((!day) ? '-' : day) + '日';
+                            $('#Tue span')[2].innerHTML = (!situation) ? '-' : situation;
+                            //$('#Tue span')[2].innerHTML = '风速' + ((!WindSpd) ? '-' : WindSpd) + 'm/s';
+                            $('#Tue span')[3].innerHTML = ((tmpMin == null || tmpMin == undefined) ? '-' : tmpMin) + '~' + ((tmpMax == null || tmpMax == undefined) ? '-' : tmpMax) + '°C';
+                            break;
+                        case "3":
+                            $('#Wed span')[1].children[0].src = '/Images/assets/img/Nxin/' + situation + 'S.png';
+                            $('#Wed span')[0].innerHTML = ((!day) ? '-' : day) + '日';
+                            $('#Wed span')[2].innerHTML = (!situation) ? '-' : situation;
+                            //$('#Wed span')[2].innerHTML = '风速' + ((!WindSpd) ? '-' : WindSpd) + 'm/s';
+                            $('#Wed span')[3].innerHTML = ((tmpMin == null || tmpMin == undefined) ? '-' : tmpMin) + '~' + ((tmpMax == null || tmpMax == undefined) ? '-' : tmpMax) + '°C';
+                            break;
+                        case "4":
+                            $('#Thu span')[1].children[0].src = '/Images/assets/img/Nxin/' + situation + 'S.png';
+                            $('#Thu span')[0].innerHTML = ((!day) ? '-' : day) + '日';
+                            $('#Thu span')[2].innerHTML = (!situation) ? '-' : situation;
+                            //$('#Thu span')[2].innerHTML = '风速' + ((!WindSpd) ? '-' : WindSpd) + 'm/s';
+                            $('#Thu span')[3].innerHTML = ((tmpMin == null || tmpMin == undefined) ? '-' : tmpMin) + '~' + ((tmpMax == null || tmpMax == undefined) ? '-' : tmpMax) + '°C';
+                            break;
+                        case "5":
+                            $('#Fri span')[1].children[0].src = '/Images/assets/img/Nxin/' + situation + 'S.png';
+                            $('#Fri span')[0].innerHTML = ((!day) ? '-' : day) + '日';
+                            $('#Fri span')[2].innerHTML = (!situation) ? '-' : situation;
+                            //$('#Fri span')[2].innerHTML = '风速' + ((!WindSpd) ? '-' : WindSpd) + 'm/s';
+                            $('#Fri span')[3].innerHTML = ((tmpMin == null || tmpMin == undefined) ? '-' : tmpMin) + '~' + ((tmpMax == null || tmpMax == undefined) ? '-' : tmpMax) + '°C';
+                            break;
+                        case "6":
+                            $('#Sat span')[1].children[0].src = '/Images/assets/img/Nxin/' + situation + 'S.png';
+                            $('#Sat span')[0].innerHTML = ((!day) ? '-' : day) + '日';
+                            $('#Sat span')[2].innerHTML = (!situation) ? '-' : situation;
+                            //$('#Sat span')[2].innerHTML = '风速' + ((!WindSpd) ? '-' : WindSpd) + 'm/s';
+                            $('#Sat span')[3].innerHTML = ((tmpMin == null || tmpMin == undefined) ? '-' : tmpMin) + '~' + ((tmpMax == null || tmpMax == undefined) ? '-' : tmpMax) + '°C';
+                            break;
+                        case "7":
+                            $('#Sun span')[1].children[0].src = '/Images/assets/img/Nxin/' + situation + 'S.png';
+                            $('#Sun span')[0].innerHTML = ((!day) ? '-' : day) + '日';
+                            $('#Sun span')[2].innerHTML = (!situation) ? '-' : situation;
+                            //$('#Sun span')[2].innerHTML = '风速' + ((!WindSpd) ? '-' : WindSpd) + 'm/s';
+                            $('#Sun span')[3].innerHTML = ((tmpMin == null || tmpMin == undefined) ? '-' : tmpMin) + '~' + ((tmpMax == null || tmpMax == undefined) ? '-' : tmpMax) + '°C';
+                            break;
+                        default: break;
+
+                    }
+
+                }
+
+            }
+        })
+    }
+
+
+    function GetPondArea() {
+        $.ajax({
+            url: "/chart/GetPondArea",
+            data: { CompanyID: CompanyID, PondID: 0 },
+            type: "Get",
+            async: false,
+            success: function (data) {
+
+                if (data && data.type == 1) {
+                    //塘口面积
+                    var s = (sumPay / sumQuantity).toFixed(2);
+                    s = to2(s);
+                    ben = sumQuantity == 0 ? 0 : s;//成本
+                    if (ben > 0) {
+                        $("#ben").html('<font>' + ben + '</font>');
+                        $("#ben").parent().addClass("cblue");
+                    } else {
+                        $("#ben").html('<font>' + ben + '</font>');
+                        $("#ben").parent().addClass("cpink");
+                    }
+                    poReceipts = to2((sumReceipts - sumPay).toFixed(2));
+                    if (poReceipts > 0) {
+                        $("#poReceipts").html('<font>' + poReceipts + '</font>');
+                        $("#poReceipts").parent().addClass("cblue");
+                    } else {
+                        $("#poReceipts").html('<font>' + poReceipts + '</font>');
+                        $("#poReceipts").parent().addClass("cpink");
+                    }
+                    muReceipts = data.data == 0 ? 0 : to2((poReceipts / data.data).toFixed(2));//亩净收益
+                    if (muReceipts > 0) {
+                        $("#muReceipts").html('<font>' + muReceipts + '</font>');
+                        $("#muReceipts").parent().addClass("cblue");
+                    } else {
+                        $("#muReceipts").html('<font>' + muReceipts + '</font>');
+                        $("#muReceipts").parent().addClass("cpink");
+                    }
+                    xishu = sumQuantity == 0 ? 0 : to2((fodder / sumQuantity).toFixed(2));//饲料系数
+                    if (xishu > 0) {
+                        $("#xishu").html('<font>' + xishu + '</font>');
+                        $("#xishu").parent().addClass("cblue");
+                    } else {
+                        $("#xishu").html('<font>' + xishu + '</font>');
+                        $("#xishu").parent().addClass("cpink");
+                    }
+
+                }
+
+            }
+        })
+    }
+    function search() {
+
+        GetReceiptsList();
+        GetPaymentList();
+        GetSumList();
+        GetPondArea();
+
+    }
+
+</script>
+<script>
+    var areaID = getUrlParam('id');
+
+    function getUrlParam(name) {
+        var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)"); //构造一个含有目标参数的正则表达式对象
+        var r = window.location.search.substr(1).match(reg);  //匹配目标参数
+        if (r != null) return unescape(r[2]); return null; //返回参数值
+    }
+
+    if (areaID) {  //从常用地区点的链接，过入详情页
+        selectWeather(0, 0, areaID);
+    }
+    function selectWeather(latitude, longitude, areaID) {
+        var queryType = 1;
+        if (latitude == 0 && longitude == 0) {
+            queryType = 3;
+        }
+        else {
+            queryType = 1;
+        }
+        $.ajax({
+            type: "Get",
+            url: '/ZNT/Get',
+            data: { latitude: latitude, longitude: longitude, queryType: queryType, nxinAreaId: areaID },
+            success: function (data) {
+                if (data) {
+                    var result = JSON.parse(data);//天气总数据
+                    if (result.code == 0 || result.code == 101) {
+                        var res = result.data;
+                        //var res = result['HeWeather data service 3.0'];    //去掉最外层的字段值
+                        var nowtime = new Date();
+                        var code = '';
+                        var txt = '';
+                        var img = '';
+                        var dayimg = '';
+                        var hour = padleft0(nowtime.getHours());
+                        var minute = padleft0(nowtime.getMinutes());
+                        var n = "18:00";
+                        var d = "06:00";
+
+                        if (hour + ":" + minute > n || hour + ":" + minute < d) {
+                            img = res.daily_forecast[0].cond.img_n;
+                        }
+                        else {
+                            img = res.daily_forecast[0].cond.img_d;
+                        }
+                        $(".city_wp").find("button").find("span").eq(1).html(res.areaInfo.name);//当前城市
+                        $(".city_wp").find("button").find("span").eq(2).html(res.areaInfo.id);//当前城市的ID
+                        $(".city_wp").find("button").find("span").eq(3).html(img);//当前城市的图片
+                        $(".city_weather_show_wp").find("div").eq(0).html(res.now.tmp + "°");//当前温度
+                        $(".city_weather_show_wp").find("div").eq(1).html(res.now.cond.txt);  //天气情况描述
+                        $(".city_weather_status").find("span").eq(1).html(res.daily_forecast[0].tmp.max + "°");
+                        $(".city_weather_status").find("span").eq(4).html(res.daily_forecast[0].tmp.min + "°");
+                        $(".humidity_wp").find("div").eq(2).html(res.daily_forecast[0].hum + "%");
+                        $(".wind_wp").find("div").eq(1).html(res.daily_forecast[0].wind.dir);
+                        $(".wind_wp").find("div").eq(2).html(res.daily_forecast[0].wind.sc);
+                        $(".barometric_wp").find("div").eq(2).html(res.now.pres + "hPa");
+                        $(".rainfall_wp").find("div").eq(2).html(res.daily_forecast[0].pop + "%");
+
+                        ///暂无数据 停用
+                        //温度趋势（每三小时更新，只能取到温度）
+                        //var iscategories = [];
+                        //var intiscategories = [];
+                        //var hours = [];
+                        //$.each(res.hourly_forecast, function(j, item) {
+                        //    iscategories.push(item.tmp + "℃");
+                        //    intiscategories.push(parseInt(item.tmp));
+                        //    hours.push(item.date.substring(10, 13) + "时");
+                        //});
+                        // Ischighcharts(iscategories, hours, intiscategories);
+
+                        //近一周天气(分白天夜晚显示天气状况)
+                        var categories = [];
+                        var categoriesWea = [];
+                        var weaMax = [];
+                        var weaMin = [];
+                        var day = "";
+                        $.each(res.daily_forecast, function (i, item) {
+                            switch (i) {
+                                case 0: day = "今天";
+                                    break;
+                                case 1: day = "明天";
+                                    break;
+                                case 2: day = "后天";
+                                    break;
+                                case 3: day = "第四天";
+                                    break;
+                                case 4: day = "第五天";
+                                    break;
+                                case 5: day = "第六天";
+                                    break;
+                                case 6: day = "第七天";
+                                    break;
+                                case 7: day = "第八天";
+                                    break;
+                                case 8: day = "第九天";
+                                    break;
+                                case 9: day = "第十天";
+                                    break;
+                            }
+                            if (hour + ":" + minute > n || hour + ":" + minute < d) {
+                                code = item.cond.code_n;
+                                txt = item.cond.txt_n;
+                                dayimg = item.cond.img_n;
+                            }
+                            else {
+
+                                code = item.cond.code_d;
+                                txt = item.cond.txt_d;
+                                dayimg = item.cond.img_d;
+                            }
+                            categories.push(item.wind.dir + '<br />' + item.wind.sc);
+                            var val = Date.parse(item.date);
+                            var newDate = new Date(val);
+                            var htmlDIV = "<div class='every_day_weather'><div>" + day + "</div><div>" + newDate.format("MM-dd") + " </div><img src=" + dayimg + " /><div>" + txt + "</div></div>";
+
+                            categoriesWea.push(htmlDIV);
+
+                            weaMax.push(parseInt(item.tmp.max));
+
+                            weaMin.push(parseInt(item.tmp.min));
+                        })
+                        Conhighcharts(categories, categoriesWea, weaMax, weaMin);
+                        var personId = getCookie('personId');
+                        if (queryType == 1) {   //缓存自动定位的数据
+                            setCookie(personId + "_address", escape(res.areaInfo.name));
+                            setCookie(personId + "_areaID", escape(res.areaInfo.id));
+                            setCookie(personId + "_img", img);
+                            setCookie(personId + "_txt", escape(res.now.cond.txt));
+                            setCookie(personId + "_max", escape(res.daily_forecast[0].tmp.max + "°"));
+                            setCookie(personId + "_min", escape(res.daily_forecast[0].tmp.min + "°"));
+                        }
+                        else {
+                            setCookie(personId + "_areaIDs", areaID);  //缓存常用地区点进来的数据
+                        }
+                    }
+                }
+            }
+        });
+    }
+</script>
+<script src="/static/js/highcharts.js?6.1:201803070430"></script>
+<script>
+    $('#BaseIDS').change(function () {
+        $('#BaseName').val($("#BaseIDS").find("option:selected").text());
+        $('#BaseID').val($("#BaseIDS").find("option:selected").val());
+        $.ajax({
+            url: '/Account/ChangFishBaseIDName',
+            dataType: 'json',
+            type: 'POST',
+            async: false,
+            data: {
+                FishBaseID: $('#BaseID').val(),
+                cFishBaseName: $('#BaseName').val()
+            },
+            success: function (data) {
+                console.log(data);
+
+                window.location.reload();
+
+            },
+            error: function (xhr, status, error) {
+
+            }
+        });//ajax end
+    })
+
+    $.fn.modal.Constructor.prototype.enforceFocus = function () { }
+
+    function SetCookie(name, value)
+    {
+        var Days = 30;
+        var exp = new Date();
+        exp.setTime(exp.getTime() + Days * 24 * 60 * 60 * 1000);
+        document.cookie = name + "=" + escape(value) + ";expires=" + exp.toGMTString();
+    }
+
+    function twopie(id, data,name) {
+        var myChart = echarts.init(document.getElementById(id));
+        var option = {
+            title: {
+                text: '',
+                x: 'center'
+            },
+            tooltip: {
+                trigger: 'item',
+                formatter: "{a} <br/>{b} : {c} ({d}%)"
+            },
+            legend: {
+                show: false,
+                orient: 'vertical'
+            },
+            series: [
+                {
+                    name: name,
+                    type: 'pie',
+                    radius: '55%',
+                    center: ['50%', '60%'],
+                    data: data,
+                    color: [
+                        '#89C3F8',
+                        '#F89CF7',
+                        '#9AEED1',
+                        '#71C27D',
+                        '#6B8CDA',
+                        '#FFD965',
+                        '#FFA897',
+                        '#BC8DEE',
+                        '#FF9655',
+                        '#C1B429'
+                    ],
+                    itemStyle: {
+                        emphasis: {
+                            shadowBlur: 10,
+                            shadowOffsetX: 0,
+                            shadowColor: 'rgba(0, 0, 0, .5)'
+                        }
+                    },
+                    label: {
+                        normal: {
+                            show: true,
+                            position: 'outside',
+                            fontStyle: 'normal',
+                            fontFamily: '微软雅黑',
+                            fontSize: 12,
+                            backgroundColor: '#fff',
+                            borderColor: 'transparent',
+                            borderWidth: 10,
+                            borderRadius: 0,
+                            padding: 0,
+                            shadowColor: '#fff',
+                            shadowBlur: 0,
+                            shadowOffsetX: 0,
+                            shadowOffsetY: 0,
+                            textBorderColor: '#fff',
+                            textBorderWidth: 0,
+                            textShadowColor: '#fff',
+                            textShadowBlur: 0,
+                            textShadowOffsetX: 0,
+                            textShadowOffsetY: 0,
+                        }
+                    }
+                }
+            ]
+        };
+        myChart.setOption(option);
+    }
+
+    function twopie_1(id, data,le,name) {
+        var myChart = echarts.init(document.getElementById(id));
+        var option = {
+            title: {
+                text: name,
+                x: 'center',
+                textStyle: {
+                    color: '#222'
+                },
+                top:10
+            },
+            tooltip: {
+                trigger: 'item',
+                formatter: "{a} <br/>{b} : {c} ({d}%)"
+            },
+            legend: {
+                show: true,
+                orient: 'horizontal',
+                data: le,
+                bottom: 10,
+                selectedMode:false
+            },
+            series: [
+                {
+                    name:name,
+                    type: 'pie',
+                    radius: '55%',
+                    data: data,
+                    color: [
+                        '#8BD478',
+                        '#FC9DDF',
+                        '#FCB974',
+                        '#fc00fc',
+                        '#1c92cf',
+                        '#04fefc',
+                        '#7cfe04',
+                        '#fc4604'
+                    ],
+                    itemStyle: {
+                        emphasis: {
+                            shadowBlur: 10,
+                            shadowOffsetX: 0,
+                            shadowColor: 'rgba(0, 0, 0, .5)'
+                        }
+                    },
+                    label: {
+                        normal: {
+                            show: true,
+                            position: 'outside',
+                            fontStyle: 'normal',
+                            fontWeight: 'normal',
+                            fontFamily: '微软雅黑',
+                            fontSize: 12,
+                            backgroundColor: 'transparent',
+                            borderColor: 'transparent',
+                            borderWidth: 0,
+                            borderRadius: 0,
+                            padding: 0,
+                            shadowColor: '#fff',
+                            shadowBlur: 0,
+                            shadowOffsetX: 0,
+                            shadowOffsetY: 0,
+                            textBorderColor: '#fff',
+                            textBorderWidth: 0,
+                            textShadowColor: '#fff',
+                            textShadowBlur: 0,
+                            textShadowOffsetX: 0,
+                            textShadowOffsetY: 0,
+                        }
+                    }
+                }
+            ]
+        };
+        myChart.setOption(option);
+    }
+
+    $(".sidebar-menu").on("click", function (t) {
+        //console.log(t.target);
+        var a = t.target;
+        //console.log($(t.target).closest("a"));
+        var isid = $(t.target).closest("a")[0].id;
+        if (isid) {
+            $('#' + isid.split('_')[0] + '_MSS').toggleClass('open');
+        }
+    })
+
+
+    function SmallBig(e) {
+        var id = e.id;
+        var nname = id.split("_")[1];
+        $('#' + nname + '_MSS').addClass('open');
+        $("#sidebar").is(":visible") && $("#sidebar").removeClass("hide");
+        $("#sidebar").removeClass("menu-compact");
+        $('#MenuSideBig').removeClass('dis-none');
+        $('#MenuSideSmall').addClass('dis-none');
+        $(".sidebar-collapse").addClass("active");
+        n = $("#sidebar").hasClass("menu-compact");
+        n && $(".open > .submenu").removeClass("open");
+        $('.MainLeft').addClass('CgW');
+        $('.page-content').addClass('backsize');
+        if ($('table').length > 0) {
+            $('table').bootstrapTable('refresh');
+        }
+        setTimeout(function () {
+            var w1 = $(".DataEarn").width() / 2;
+            var h1 = $(".DataEarn").height() - 60;
+            var w2 = $(".DataEarnExpend").width();
+            var h2 = $(".DataEarnExpend").height() - 60;
+            if ($("#SumC_chart").length > 0) {
+                $("#SumC_chart").highcharts().setSize(w2, h2, false);
+            }
+
+        }, 700)
+
+
+//        var i = $('#' + nname + '_A'),
+//            u, r, f;
+//        if (i && i.length != 0) {
+//            if (!i.hasClass("menu-dropdown")) return n && i.get(0).parentNode.parentNode == $('#' + nname + '_MSSS') && (u = i.find(".menu-text").get(0), $('#' + nname + '_MSS').target != u && !$.contains(u, $('#' + nname + '_MSS').target)) ? !1 : void 0;
+//            if (r = i.next().get(0), !$(r).is(":visible")) {
+//                if (f = $(r.parentNode).closest("ul"), n && f.hasClass("sidebar-menu")) return;
+//                f.find("> .open > .submenu").each(function () {
+//                    $('#' + nname + '_MSSS') == r || $($('#' + nname + '_MSSS').parentNode).hasClass("active") || $($('#' + nname + '_MSSS')).slideUp(200).parent().removeClass("open");
+//                    console.log(this);
+//                })
+//            }
+//            return n && $(r.parentNode.parentNode).hasClass("sidebar-menu") ? !1 : ($(r).slideToggle(200).parent().toggleClass("open"), !1)
+//        }
+    }
+
+
+    $('#modal_delete').on('show.bs.modal', function (e) {
+        // 关键代码，如没将modal设置为 block，则$modala_dialog.height() 为零
+        $(this).css('display', 'block');
+        var modalHeight = $(window).height() / 2 - $('#modal_delete .modal-dialog').height() / 2;
+        $(this).find('.modal-dialog').css({
+            'margin-top': modalHeight
+        });
+    });
+    function backgo() {
+        window.location.href = '/main';
+    }
+
+    $('.menu').click(function () {
+
+        $('.dropDown').slideDown("fast");
+        $('.dropDown1').slideUp('fast');
+        //$('.dropDown').fadeIn("fast");
+        //$('.dropDown1').fadeOut('fast');
+    });
+
+    $('.zxm').hover(function () {
+    }, function () {
+        $('.dropDown').slideUp('fast');
+        //$('.dropDown').fadeOut('fast');
+    });
+    function clik(e) {
+        $('#base').html(e.text);
+        $('.dropDown1').slideUp('fast');
+        ChangBase(e.text, e.id);
+        //$('.dropDown1').fadeOut('fast');
+    }
+    function Comclik(e) {
+        var child = e.childNodes;
+        ChangCompany(child[0].text, child[0].id);
+
+    }
+
+    function BaseName1() {
+        $.ajax({
+            url: '/Account/GetPondBaseByUser',
+            dataType: 'json',
+            type: 'POST',
+            async: false,
+            success: function (data) {
+                //console.log(data);
+                var Getdata = data.data;
+                //console.log(Getdata);
+                var str = '';
+                if (data.type == 3) {
+                    layer.msg('已超时,请重新登录!');
+                    delAllCookie();
+                    setTimeout(function () {
+                        window.location.href = "http://ylw.nxin.com/Account/Login";
+                    },2000)
+
+                } else if (Getdata) {
+                    $('.dropDown1').get(0).innerHTML = '';
+                    for (var i in Getdata) {
+                        var name = Getdata[i].cFishBaseName;
+
+                        if (name == undefined) {
+                            name = '暂无基地名称';
+                        }
+                        if (i == 0) {
+                            $('#base').html(name);
+                        }
+                        str += '<li><a href="" onclick="clik(this)" id="' + Getdata[i].FishBaseID + '">' + name + '</a ></li >';
+
+                    }
+                    $('.dropDown1').append(str);
+
+                    $('.menu1').click(function () {
+                        $('.dropDown1').slideDown("fast");
+                        $('.dropDown').slideUp('fast');
+                    });
+
+                    $('#companychange').hover(function () {
+
+                        $(".dropDown2").fadeIn("fast");
+                        $('.dropDown').addClass('b-t-l');
+                    }, function () {
+                        $(".dropDown2").fadeOut('fast');
+                        //$(".dropDown2").animate({ right: '0px' });
+                        $('.dropDown').removeClass('b-t-l');
+                        //$(".dropDown2").removeclass('z-in');
+                    });
+
+                    $('.cxf').hover(function () {
+                    }, function () {
+                        $('.dropDown1').slideUp('fast');
+                        //$('.dropDown1').fadeOut('fast');
+                    });
+
+                } else {
+
+                }
+
+
+
+            },
+            error: function (xhr, status, error) {
+
+
+            }
+        });//ajax end
+    }
+
+
+    function ChangBase(name, ID) {
+        $.ajax({
+            url: '/Account/ChangFishBaseIDName',
+            dataType: 'json',
+            type: 'POST',
+            async: false,
+            data: {
+                FishBaseID: ID,
+                cFishBaseName: name
+            },
+            success: function (data) {
+                console.log(data);
+                window.location.reload();
+
+            },
+            error: function (xhr, status, error) {
+
+            }
+        });//ajax end
+
+    }
+
+    function ChangCompany(name, ID) {
+        $.ajax({
+            url: '/Account/ChangeCompanyIDName',
+            dataType: 'json',
+            type: 'POST',
+            async: false,
+            data: {
+                CompanyID: ID,
+                CompanyName: name
+            },
+            success: function (data) {
+                console.log(data);
+                if (data.type == 3) {
+                    layer.msg(data.message);
+                } else {
+                    window.location.href = '/main';
+                }
+
+            },
+            error: function (xhr, status, error) {
+            }
+        });//ajax end
+
+    }
+
+
+    function GetCompany() {
+        $.ajax({
+            url: '/Account/GetCompanyIDName',
+            dataType: 'json',
+            type: 'GET',
+            async: false,
+            data: {
+            },
+            success: function (data) {
+                console.log(data);
+                var Getdata = data.data.Data;
+                $('#' + Getdata.CompanyID).get(0).style = "color:#5a8cff";
+            },
+            error: function (xhr, status, error) {
+
+
+            }
+        });//ajax end
+    }
+
+    function GetBase1() {
+        $.ajax({
+            url: '/Account/GetFishBaseIDName',
+            dataType: 'json',
+            type: 'GET',
+            async: false,
+            data: {
+            },
+            success: function (data) {
+                console.log(data);
+                var Getdata = data.data.Data;
+                $('#base').html(Getdata.cFishBaseName);
+            },
+            error: function (xhr, status, error) {
+
+
+            }
+        });//ajax end
+    }
+
+    function ComName() {
+        $.ajax({
+            url: '/Account/GetCompanyByUser',
+            dataType: 'json',
+            type: 'POST',
+            async: false,
+            success: function (data) {
+                console.log(data);
+                var Getdata = data.data;
+                console.log(Getdata);
+                if (data.type == 3) {
+                    layer.msg('已超时,请重新登录!');
+                    delAllCookie();
+                    setTimeout(function () {
+                        window.location.href = "http://ylw.nxin.com/Account/Login";
+                    },2000)
+
+                } else {
+                    var str = '';
+                    for (var i in Getdata) {
+                        var name = Getdata[i].cCompanyName;
+                        if (name == undefined) {
+                            name = '暂无公司名称';
+                        }
+                        str += '<li onclick="Comclik(this)"><a href="#" id="' + Getdata[i].CompanyID + '">' + name + '</a ></li >';
+                        //str += '<li><a href="#" id="' + Getdata[i].CompanyID + '">我是标准八个字符</a ></li >';
+
+                    }
+                    $('.dropDown2').append(str);
+                }
+
+
+
+            },
+            error: function (xhr, status, error) {
+
+
+            }
+        });//ajax end
+    }
+
+    function delAllCookie() {
+        delCookie('MenuList');
+        var myDate = new Date();
+        myDate.setTime(-1000);//设置时间
+        var data = document.cookie;
+        var dataArray = data.split("; ");
+        for (var i = 0; i < dataArray.length; i++) {
+            var varName = dataArray[i].split("=");
+            document.cookie = varName[0] + "=''; expires=" + myDate.toGMTString();
+        }
+
+        window.location.href = '/Account/LogOff';
+    }
+
+    function delCookie(name) {
+        var exp = new Date();
+        exp.setTime(exp.getTime() - 1);
+        var cval = getCookie(name);
+        if (cval != null)
+            document.cookie = name + "=" + cval + ";expires=" + exp.toGMTString();
+    }
+
+    //if (window.Event)
+    //    document.captureEvents(Event.MOUSEUP);
+
+    //function nocontextmenu() {
+    //    event.cancelBubble = true
+    //    event.returnValue = false;
+
+    //    return false;
+    //}
+
+    //function norightclick(e) {
+    //    if (window.Event) {
+    //        if (e.which == 2 || e.which == 3)
+    //            return false;
+    //    } else if (event.button == 2 || event.button == 3) {
+    //        event.cancelBubble = true
+    //        event.returnValue = false;
+    //        return false;
+    //    }
+
+    //}
+
+    //document.oncontextmenu = nocontextmenu;  // for IE5+
+    //document.onmousedown = norightclick;  //for all others
+
+    window.UserID, window.cLoginName, window.PersonName, window.CompanyID;
+    //暂且删除这个，如果加上这个
+    //$('a').each(function () {
+    //    this.onclick = function () {
+    //        $('li').removeClass('active');
+    //        $(this).parent().addClass('active');
+    //    };
+    //});
+
+    $(function () {
+        //获取登录信息
+        $.getScript("https://cas.nxin.com/cas/v1/tickets/loginApi");
+        ComName();
+        var FirstComId = '';
+        var FirstComName = '';
+        FirstComId = $('.dropDown2')[0].childNodes[0].childNodes[0].id;
+        FirstComName = $('.dropDown2')[0].childNodes[0].childNodes[0].text;
+        BaseName1();
+        GetCompany();
+        GetBase1();
+
+        //获取定位 此处去掉了智农通相关js
+        //去掉田联网接口
+        //selectWeather(39.978048, 116.316578);
+    });
+
+    function loginApi(resp) {
+        UserID = resp.id
+        cLoginName = resp.loginName
+        PersonName = resp.name;
+        $("#UserID").val(UserID);
+        $("#cLoginName").val(cLoginName);
+        if (UserID) {
+            $.ajax({
+                url: "/home/setLoad",
+                data: { UserID: UserID },
+                success: function (a) {
+                    if (a && a.type == 1) {
+                        //已登录 未注册渔联网
+                        if (resp.name) {
+
+                            $("#PersonName").text(PersonName + ",你好");
+                        }
+                        else {
+                            if (resp.loginName) {
+
+                                $("#PersonName").text(resp.loginName + ",你好");
+                            }
+                        }
+                    }
+                    else if (a.type == 3) {
+                        //已登录 未注册渔联网
+                        window.location.href = "/BSManager/Company/CreateCompany";
+                    }
+                    else {
+                        window.location.href = "/account/login";
+                    }
+                }
+            })
+            $.get("/account/GetUserHeadImage", { bo_id: UserID }, function (data) {
+                if (data != "")
+                    $("#userHeadImage").attr("src", data);
+            })
+
+        }
+
+
+
+    };
+
+    //读取cookie
+    function getCookie(name) {
+        var arr, reg = new RegExp("(^| )" + name + "=([^;]*)(;|$)");
+        if (arr = document.cookie.match(reg))
+            return unescape(arr[2]);
+        else
+            return null;
+    }
+
+    function getUserCompany() {
+        var c = getCookie("YlwUser");
+        var d = eval('[' + c + ']');
+        CompanyID = d[0].CompanyID;
+        UserID = d[0].UserID;
+        $("#iPreparedBy").val(UserID);
+        $("#CompanyID").val(CompanyID);
+    }
+
+    getUserCompany();
+
+    //GetAlarmNum();
+</script>

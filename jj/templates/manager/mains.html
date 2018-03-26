@@ -1,0 +1,870 @@
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<!-- Head -->
+<head>
+    {% include "head.html" %}
+</head>
+<!-- /Head -->
+<!-- Body -->
+<body>
+    <!-- Loading Container -->
+{#    <div class="loading-container">#}
+{#        <div class="loading-progress">#}
+{#            <div class="rotator">#}
+{#                <div class="rotator">#}
+{#                    <div class="rotator colored">#}
+{#                        <div class="rotator">#}
+{#                            <div class="rotator colored">#}
+{#                                <div class="rotator colored"></div>#}
+{#                                <div class="rotator"></div>#}
+{#                            </div>#}
+{#                            <div class="rotator colored"></div>#}
+{#                        </div>#}
+{#                        <div class="rotator"></div>#}
+{#                    </div>#}
+{#                    <div class="rotator"></div>#}
+{#                </div>#}
+{#                <div class="rotator"></div>#}
+{#            </div>#}
+{#            <div class="rotator"></div>#}
+{#        </div>#}
+{#    </div>#}
+    <!--  /Loading Container -->
+    <!-- Navbar -->
+    <div class="navbar mt navbar-fixed-top">
+        <div class="navbar-inner">
+            <div class="navbar-container">
+                <!-- Navbar Barnd -->
+                <div class="navbar-header pull-left nav_head_left">
+                    <div class="nav_logo">
+                        <img class="cp" src="/static/img/logo2.0.png" onclick="backgo()" width="90px"  alt="" />
+                        <span class="cp">V2.2.0</span>
+                    </div>
+                    
+                    
+                    <div class="sidebar-collapse" id="sidebar-collapse">
+                        <i style="color:#fff" class="collapse-icon fa fa-bars"></i>
+                    </div>
+                </div>
+                <!-- /Navbar Barnd -->
+                <!-- Sidebar Collapse -->
+                
+                <!-- /Sidebar Collapse -->
+                <!--
+                    作者：352183987@qq.com
+                    时间：2017-07-05
+                    描述：Weacher
+                -->
+                
+
+                <!-- Account Area and Settings --->
+                <div class="navbar-header pull-right">
+                    <div class="navbar-account">
+                        <ul class="account-area" style="margin-top:8px">
+                            <li style="width: 200px;text-align: center;">
+                                <a class="login-area dropdown-toggle menu1" data-toggle="dropdown">
+                                    <section>
+                                        <h2>
+                                            <span class="profile"><span><font id="base" style="color:#fff"></font></span></span>
+                                        </h2>
+                                    </section>
+                                </a>
+                                <nav style="position:absolute">
+
+                                    
+                                    <ul class="dropDown1 cxf"></ul>
+                                </nav>
+                                <i style="position: absolute;top: 20px;color:#fff" class="fa  fa-caret-down"></i>
+                            </li>
+                            
+                            <li>
+
+                                <a class="login-area dropdown-toggle menu" data-toggle="dropdown">
+                                    <div class="avatar bl-none" title="View your public profile">
+                                        <img id="userHeadImage" src="/static/img/headimg.png">
+                                    </div>
+                                    <section style="width: 124px;">
+                                        <h2>
+                                            <span class="profile"><span><font id="PersonName" style="color:#fff"></font><i style="color:#fff" class="fa  fa-caret-down"></i></span></span>
+                                        </h2>
+                                    </section>
+                                </a>
+                                <nav>
+
+                                    
+                                    <ul class="dropDown zxm">
+                                        <li id="companychange">
+                                            <a href="#">公司切换</a>
+                                            <ul class="dropDown2" style="display:none"></ul>
+                                        </li>
+                                        <li><a href="http://wo.nxin.com/index.html" target="_blank">个人中心</a></li>
+                                        <li><a href="http://wo.nxin.com/index.html#/ent" target="_blank">企业认证</a></li>
+                                        <li><a href="http://ylw.nxin.com/EnterpriseBigData/Main/Enterprise" target="_blank">企业实时运行平台</a></li>
+                                        <li><a onclick="delAllCookie()" href="javascript:void(0);">退出登录</a></li>
+                                    </ul>
+
+                                </nav>
+
+
+                                <!--Login Area Dropdown-->
+                                
+                                <!--/Login Area Dropdown-->
+                            </li>
+                            <!-- /Account Area -->
+                            <!-- Settings -->
+                        </ul>
+                        <div class="setting" style="display:none">
+                            <a id="btn-setting" title="Setting" href="#">
+                                <i class="icon glyphicon glyphicon-cog"></i>
+                            </a>
+                        </div>
+                        <div class="setting-container">
+                            <label>
+                                <input type="checkbox" id="checkbox_fixednavbar" checked>
+                                <span class="text">固定导航栏</span>
+                            </label>
+                            <label>
+                                <input type="checkbox" id="checkbox_fixedsidebar" checked>
+                                <span class="text">固定侧边栏</span>
+                            </label>
+                            <label>
+                                <input type="checkbox" id="checkbox_fixedbreadcrumbs" checked>
+                                <span class="text">固定面包屑导航</span>
+                            </label>
+                            <label>
+                                <input type="checkbox" id="checkbox_fixedheader" checked>
+                                <span class="text">固定整个导航</span>
+                            </label>
+                        </div>
+                        <!-- Settings -->
+                    </div>
+                </div>
+                <!-- /Account Area and Settings -->
+            </div>
+        </div>
+    </div>
+    <!-- /Navbar -->
+    <!-- Main Container -->
+    <div class="main-container container-fluid" style="background-color: #F0F3FA !important;">
+        <!-- Page Container -->
+        <div class="page-container">
+            <!-- Page Sidebar -->
+            <div class="page-sidebar sidebar-fixed" id="sidebar">
+                <!-- Sidebar Menu -->
+                    
+<div>
+    <ul class="nav sidebar-menu" id="MenuSideBig">
+        <!--Dashboard-->
+        
+        <!--Databoxes-->
+                <li id=设备管理_MSS >
+                    
+                    <a class="menu-dropdown" id=设备管理_A>
+                        
+                        <span class="menu-text"> 设备管理  </span>
+                        <i class="menu-expand fa fa-caret-right"></i>
+                    </a>
+                    <ul class="submenu" id=设备管理_MSSS>
+                            <li class=>
+                                
+                                <a href="http://tp.com:90/equipment">
+                                    <img src="/static/img/设备控制.png" width="24" height="24" />
+                                    <span class="menu-text">设备控制</span>
+                                </a>
+                                
+                            </li>
+                            <li class=>
+                                
+                                <a href="/znmanager/equipment/videoindex_jump">
+                                    <img src="/static/img/视频监控.png" width="24" height="24" />
+                                    <span class="menu-text">视频监控</span>
+                                </a>
+                                
+                            </li>
+                            <li class=>
+                                
+                                <a href="/znmanager/waterquality/index">
+                                    <img src="/static/img/水质参数.png" width="24" height="24" />
+                                    <span class="menu-text">水质参数</span>
+                                </a>
+                                
+                            </li>
+                    </ul>
+                </li>
+                <li id=饲养管理_MSS >
+                    
+                    <a class="menu-dropdown" id=饲养管理_A>
+                        
+                        <span class="menu-text"> 饲养管理  </span>
+                        <i class="menu-expand fa fa-caret-right"></i>
+                    </a>
+                    <ul class="submenu" id=饲养管理_MSSS>
+                            <li class=>
+                                
+                                <a href="/msmanger/budget/index">
+                                    <img src="/static/img/生产计划.png" width="24" height="24" />
+                                    <span class="menu-text">生产计划</span>
+                                </a>
+                                
+                            </li>
+                            <li class=>
+                                
+                                <a href="/msmanger/fodder/index">
+                                    <img src="/static/img/用料管理.png" width="24" height="24" />
+                                    <span class="menu-text">用料管理</span>
+                                </a>
+                                
+                            </li>
+                            <li class=>
+                                
+                                <a href="/msmanger/medicine/index">
+                                    <img src="/static/img/用药管理.png" width="24" height="24" />
+                                    <span class="menu-text">用药管理</span>
+                                </a>
+                                
+                            </li>
+                            <li class=>
+                                
+                                <a href="/msmanger/fishfry/index">
+                                    <img src="/static/img/放苗管理.png" width="24" height="24" />
+                                    <span class="menu-text">放苗管理</span>
+                                </a>
+                                
+                            </li>
+                            <li class=>
+                                
+                                <a href="/msmanger/sample/index">
+                                    <img src="/static/img/打样管理.png" width="24" height="24" />
+                                    <span class="menu-text">打样管理</span>
+                                </a>
+                                
+                            </li>
+                            <li class=>
+                                
+                                <a href="/msmanger/loss/index">
+                                    <img src="/static/img/损耗管理.png" width="24" height="24" />
+                                    <span class="menu-text">损耗管理</span>
+                                </a>
+                                
+                            </li>
+                    </ul>
+                </li>
+                <li id=购销管理_MSS >
+                    
+                    <a class="menu-dropdown" id=购销管理_A>
+                        
+                        <span class="menu-text"> 购销管理  </span>
+                        <i class="menu-expand fa fa-caret-right"></i>
+                    </a>
+                    <ul class="submenu" id=购销管理_MSSS>
+                            <li class=>
+                                
+                                <a href="/msmanger/salespurchase/fodderpurchase">
+                                    <img src="/static/img/进料管理.png" width="24" height="24" />
+                                    <span class="menu-text">进料管理</span>
+                                </a>
+                                
+                            </li>
+                            <li class=>
+                                
+                                <a href="/msmanger/salespurchase/medicinepurchase">
+                                    <img src="/static/img/进药管理.png" width="24" height="24" />
+                                    <span class="menu-text">进药管理</span>
+                                </a>
+                                
+                            </li>
+                            <li class=>
+                                
+                                <a href="/msmanger/salespurchase/fishfrypurchase">
+                                    <img src="/static/img/进苗管理.png" width="24" height="24" />
+                                    <span class="menu-text">进苗管理</span>
+                                </a>
+                                
+                            </li>
+                            <li class=>
+                                
+                                <a href="/msmanger/fishcatch/index">
+                                    <img src="/static/img/出塘管理.png" width="24" height="24" />
+                                    <span class="menu-text">出塘管理</span>
+                                </a>
+                                
+                            </li>
+                    </ul>
+                </li>
+                <li id=费用管理_MSS >
+                    
+                    <a class="menu-dropdown" id=费用管理_A>
+                        
+                        <span class="menu-text"> 费用管理  </span>
+                        <i class="menu-expand fa fa-caret-right"></i>
+                    </a>
+                    <ul class="submenu" id=费用管理_MSSS>
+                            <li class=>
+                                
+                                <a href="/msmanger/costother/index">
+                                    <img src="/static/img/费用管理.png" width="24" height="24" />
+                                    <span class="menu-text">费用管理</span>
+                                </a>
+                                
+                            </li>
+                    </ul>
+                </li>
+                <li id=报表统计_MSS >
+                    
+                    <a class="menu-dropdown" id=报表统计_A>
+                        
+                        <span class="menu-text"> 报表统计  </span>
+                        <i class="menu-expand fa fa-caret-right"></i>
+                    </a>
+                    <ul class="submenu" id=报表统计_MSSS>
+                            <li class=>
+                                
+                                <a href="/msmanger/chart/pondsituation">
+                                    <img src="/static/img/塘口概况.png" width="24" height="24" />
+                                    <span class="menu-text">塘口概况</span>
+                                </a>
+                                
+                            </li>
+                            <li class=>
+                                
+                                <a href="/msmanger/chart/productionreport">
+                                    <img src="/static/img/生产报表.png" width="24" height="24" />
+                                    <span class="menu-text">生产报表</span>
+                                </a>
+                                
+                            </li>
+                            <li class=>
+                                
+                                <a href="/msmanger/chart/receiptschart">
+                                    <img src="/static/img/收益报表.png" width="24" height="24" />
+                                    <span class="menu-text">收益报表</span>
+                                </a>
+                                
+                            </li>
+                            <li class=>
+                                
+                                <a href="/msmanger/chart/sumpay#tblist_base">
+                                    <img src="/static/img/收支排名表.png" width="24" height="24" />
+                                    <span class="menu-text">收支排名表</span>
+                                </a>
+                                
+                            </li>
+                            <li class=>
+                                
+                                <a href="/msmanger/chart/repertoryreport">
+                                    <img src="/static/img/库存报表.png" width="24" height="24" />
+                                    <span class="menu-text">库存报表</span>
+                                </a>
+                                
+                            </li>
+                            <li class=>
+                                
+                                <a href="/msmanger/chart/fishcatchreport">
+                                    <img src="/static/img/出塘报表.png" width="24" height="24" />
+                                    <span class="menu-text">出塘报表</span>
+                                </a>
+                                
+                            </li>
+                            <li class=>
+                                
+                                <a href="/msmanger/chart/lossreport">
+                                    <img src="/static/img/损失分析.png" width="24" height="24" />
+                                    <span class="menu-text">损失分析</span>
+                                </a>
+                                
+                            </li>
+                    </ul>
+                </li>
+                <li id=渔场设置_MSS >
+                    
+                    <a class="menu-dropdown" id=渔场设置_A>
+                        
+                        <span class="menu-text"> 渔场设置  </span>
+                        <i class="menu-expand fa fa-caret-right"></i>
+                    </a>
+                    <ul class="submenu" id=渔场设置_MSSS>
+                            <li class=>
+                                
+                                <a href="/bsmanager/pondtype/index">
+                                    <img src="/static/img/塘口类型.png" width="24" height="24" />
+                                    <span class="menu-text">塘口类型</span>
+                                </a>
+                                
+                            </li>
+                            <li class=>
+                                
+                                <a href="/bsmanager/pond/pondsetview">
+                                    <img src="/static/img/塘口设置.png" width="24" height="24" />
+                                    <span class="menu-text">塘口设置</span>
+                                </a>
+                                
+                            </li>
+                            <li class=>
+                                
+                                <a href="/bsmanager/batchmanage/index">
+                                    <img src="/static/img/批次设置.png" width="24" height="24" />
+                                    <span class="menu-text">批次设置</span>
+                                </a>
+                                
+                            </li>
+                            <li class=>
+                                
+                                <a href="/bsmanager/product/index">
+                                    <img src="/static/img/物资设置.png" width="24" height="24" />
+                                    <span class="menu-text">物资设置</span>
+                                </a>
+                                
+                            </li>
+                            <li class=>
+                                
+                                <a href="/bsmanager/customer/index">
+                                    <img src="/static/img/购销单位设置.png" width="24" height="24" />
+                                    <span class="menu-text">购销单位设置</span>
+                                </a>
+                                
+                            </li>
+                            <li class=>
+                                
+                                <a href="/msmanger/costtype/index">
+                                    <img src="/static/img/费用设置.png" width="24" height="24" />
+                                    <span class="menu-text">费用设置</span>
+                                </a>
+                                
+                            </li>
+                    </ul>
+                </li>
+                <li id=公司设置_MSS >
+                    
+                    <a class="menu-dropdown" id=公司设置_A>
+                        
+                        <span class="menu-text"> 公司设置  </span>
+                        <i class="menu-expand fa fa-caret-right"></i>
+                    </a>
+                    <ul class="submenu" id=公司设置_MSSS>
+                            <li class=>
+                                
+                                <a href="/bsmanager/company/editcompany">
+                                    <img src="/static/img/公司资料.png" width="24" height="24" />
+                                    <span class="menu-text">公司资料</span>
+                                </a>
+                                
+                            </li>
+                            <li class=>
+                                
+                                <a href="/bsmanager/pondbase/index">
+                                    <img src="/static/img/基地管理.png" width="24" height="24" />
+                                    <span class="menu-text">基地管理</span>
+                                </a>
+                                
+                            </li>
+                            <li class=>
+                                
+                                <a href="/bsmanager/department/index">
+                                    <img src="/static/img/部门管理.png" width="24" height="24" />
+                                    <span class="menu-text">部门管理</span>
+                                </a>
+                                
+                            </li>
+                            <li class=>
+                                
+                                <a href="/stmanager/role/index">
+                                    <img src="/static/img/人员管理.png" width="24" height="24" />
+                                    <span class="menu-text">人员管理</span>
+                                </a>
+                                
+                            </li>
+                    </ul>
+                </li>
+    </ul>
+
+    <ul class="BigMenu dis-none" id="MenuSideSmall">
+                <li id=MSS_设备管理 onclick="SmallBig(this)" >
+                    <img src=/static/img/S1.png width="34" />
+                    <p>设备管理</p>
+                </li>
+                <li id=MSS_饲养管理 onclick="SmallBig(this)" >
+                    <img src=/static/img/S2.png width="34" />
+                    <p>饲养管理</p>
+                </li>
+                <li id=MSS_购销管理 onclick="SmallBig(this)" >
+                    <img src=/static/img/S3.png width="34" />
+                    <p>购销管理</p>
+                </li>
+                <li id=MSS_费用管理 onclick="SmallBig(this)" >
+                    <img src=/static/img/S4.png width="34" />
+                    <p>费用管理</p>
+                </li>
+                <li id=MSS_报表统计 onclick="SmallBig(this)" >
+                    <img src=/static/img/S5.png width="34" />
+                    <p>报表统计</p>
+                </li>
+                <li id=MSS_渔场设置 onclick="SmallBig(this)" >
+                    <img src=/static/img/S6.png width="34" />
+                    <p>渔场设置</p>
+                </li>
+                <li id=MSS_公司设置 onclick="SmallBig(this)" >
+                    <img src=/static/img/S7.png width="34" />
+                    <p>公司设置</p>
+                </li>
+    </ul>
+</div>
+
+
+<!-- class="active"-->
+                <!-- /Sidebar Menu -->
+            </div>
+            <!-- /Page Sidebar -->
+            <!-- Page Content -->
+            <div class="page-content backsize">
+                <!-- Page Body -->
+                
+
+<style type="text/css">
+    .backsize {
+        min-width: 1635px !important;
+    }
+    body {
+        font-family: '黑体';
+    }
+    .page-content {
+        display: block;
+        /*margin-left: 19em;*/
+        margin-left: 268px;
+        margin-right: 0;
+        margin-top: 37px;
+        min-height: 886px;
+        max-height: 886px;
+        padding: 0;
+        min-width: 1773px;
+    }
+    .highcharts-container {
+        top: 15px;
+    }
+</style>
+
+<!-- Page Body -->
+<div class="page-body flo">
+    <section class="MainLeft CgW">
+        <section class="SearchSec">
+            <div>
+                <button id="btn_1" class="btn-search-small-none small_active" onclick="cli(this)">农信</button>
+                <button id="btn_2" class="btn-search-small-none" onclick="cli(this)">百度</button>
+                <button id="btn_3" class="btn-search-small-none" onclick="cli(this)">应用</button>
+                <button id="btn_4" class="btn-search-small-none" onclick="cli(this)">图片</button>
+                <button id="btn_5" class="btn-search-small-none" onclick="cli(this)">视频</button>
+                <button id="btn_6" class="btn-search-small-none" onclick="cli(this)">课件</button>
+                <button id="btn_7" class="btn-search-small-none" onclick="cli(this)">问题</button>
+            </div>
+            <input placeholder="输入关键字查找你想要的">
+            <button id="MainSearch" class="btn-search"><i class="glyphicon glyphicon-search"></i> &nbsp;搜索</button>
+        </section>
+        <section class="DataFour flo">
+            <div class="FourOne">
+                <span class="DF_Small">今日建议投喂量</span>
+                <span class="DF_Big">0斤</span>
+            </div>
+            <div class="FourTwo">
+                <span class="DF_Small">预估存塘量</span>
+                <span class="DF_Big">0斤</span>
+            </div>
+            <div class="FourThree">
+                <span class="DF_Small">总支出</span>
+                <span class="DF_Big"><font id="sumPay"></font>元</span>
+            </div>
+            <div class="FourFour">
+                <span class="DF_Small">总收益</span>
+                <span class="DF_Big"><font id="sumReceipts"></font>元</span>
+            </div>
+        </section>
+        <section class="DataFive flo">
+            <div class="fl w20p">
+                <article class="Black">
+                    综合单位成本
+                </article>
+                <article class="Blue">
+                    <font id="ben"></font>元/斤
+                </article>
+            </div>
+            <div class="fl w20p">
+                <article class="Black">
+                    总净收益
+                </article>
+                <article class="Blue">
+                    <font id="poReceipts"></font>元
+                </article>
+            </div>
+            <div class="fl w20p">
+                <article class="Black">
+                    亩净收益
+                </article>
+                <article class="Blue">
+                    <font id="muReceipts"></font>元/亩
+                </article>
+            </div>
+            <div class="fl w20p">
+                <article class="Black">
+                    饲料用量
+                </article>
+                <article class="Blue">
+                    <font id="fodder"></font>斤
+                </article>
+            </div>
+            <div class="fl w20p">
+                <article class="Black">
+                    饵料系数
+                </article>
+                <article class="Blue">
+                    <font id="xishu"></font>
+                </article>
+            </div>
+        </section>
+        <section class="DEE">
+            <section class="DataExpend fl">
+                <div class="DE_head">
+                    <img src="/static/img/%e6%94%af%e5%87%ba%e6%9e%84%e6%88%90@2x.png" width="26" height="20" />
+                    <span>支出构成</span>
+                </div>
+                <div id="datazc">
+                    <div class="w50p fl">
+                        <div id="PayS_chart" class="RSC"></div>
+                    </div>
+                    <center class="w50p fr tal flo" style="font-size:12px;" id="zclegend">
+                    </center>
+                    <div id="PayB_chart" class="dis-none"></div>
+                </div>
+                <center id="nonedatazc" class="dis-none" style="margin-top: 95px;font-size: 25px;color:#222">
+                    当前暂无支出
+                </center>
+            </section>
+            <section class="DataEarn fl">
+                <div class="DE_head">
+                    <img src="/static/img/%e6%94%b6%e7%9b%8a%e6%9e%84%e6%88%90@2x.png" width="26" height="20" />
+                    <span>收益构成</span>
+                </div>
+                <div id="datasy">
+                    <div class="w50p fl">
+                        <div id="RecS_chart" class="RSC"></div>
+                    </div>
+                    <center class="w50p fr tal flo" style="font-size:12px;" id="sylegend">
+                    </center>
+                    <div id="RecB_chart" class="dis-none"></div>
+                </div>
+                <center id="nonedatasy" class="dis-none" style="margin-top: 95px;font-size: 25px;color:#222">
+                    当前暂无收益
+                </center>
+            </section>
+            <div class="clear"></div>
+        </section>
+
+
+        <section class="DataEarnExpend">
+            <div class="DE_head fl">
+                <img src="/static/img/%e6%94%b6%e6%94%af%e6%9e%84%e6%88%90@2x.png" width="26" height="20" />
+                <span>月收益支出对比图</span>
+            </div>
+            <div class="fr" style="margin-right: 15px;margin-top: 12px;">
+                <span style="background-color:#73A4FF" class="legend"></span>
+                <span class="mr10">支出</span>
+                <span style="background-color:#FFA897" class="legend"></span>
+                <span class="mr10">收益</span>
+                <span style="color:#73A4FF" class="legend1">--</span>
+                <span class="mr10">总支出</span>
+                <span style="color:#FFA897" class="legend1">--</span>
+                <span>总收益</span>
+            </div>
+            <div id="SumC_chart" class="SCC"></div>
+        </section>
+    </section>
+    <section class="MainRight">
+        <section class="MainWeather">
+            <div class="DE_head">
+                <img src="/static/img/%e5%a4%a9%e6%b0%94%e9%a2%84%e6%8a%a5@2x.png" width="26" height="20" />
+                <span>天气预报</span>
+                <span style="margin-left: 32px;font-size: 14px;">当前地区 : <font id="areaAdd"></font></span>
+            </div>
+            <div class="GetTime" id="GetTime">
+            </div>
+            <section class="flo" style="padding: 70px 50px 50px 50px;">
+                <div class="fl tar w40p">
+                    <img id="WeatherPic" src="/static/img/多云@2x.png" />
+                </div>
+                <div class="fr tal w40p">
+                    <span class="dis-blk BigTem" id="Tem">30°C</span>
+                    <span class="dis-blk SmallClu" id="Text">多云</span>
+                    <span class="dis-blk SmallWin" id="Win">风力2级</span>
+                </div>
+            </section>
+            <center class="flo" style="font-size:12px;color:#555;">
+                <div class="fl w15p" style="margin-left:3.75%;" id="Mon">
+                    <span class="dis-blk mb10">-日</span>
+                    <span class="dis-blk" style="height:35px;">
+                        <img src="/static/img/%e5%a4%a7%e9%83%a8%e5%a4%9a%e4%ba%91S.png" />
+                    </span>
+                    <span class="dis-blk">--</span>
+                    <span class="dis-blk">°C ~ °C</span>
+                </div>
+                <div class="fl w15p" style="margin-left:3.75%;" id="Tue">
+                    <span class="dis-blk mb10">-日</span>
+                    <span class="dis-blk" style="height:35px;">
+                        <img src="/static/img/%e5%a4%a7%e9%83%a8%e5%a4%9a%e4%ba%91S.png" />
+                    </span>
+                    <span class="dis-blk">--</span>
+                    <span class="dis-blk">°C ~ °C</span>
+                </div>
+                <div class="fl w15p" style="margin-left:3.75%;" id="Wed">
+                    <span class="dis-blk mb10">-日</span>
+                    <span class="dis-blk" style="height:35px;">
+                        <img src="/static/img/%e5%a4%a7%e9%83%a8%e5%a4%9a%e4%ba%91S.png" />
+                    </span>
+                    <span class="dis-blk">--</span>
+                    <span class="dis-blk">°C ~ °C</span>
+                </div>
+                <div class="fl w15p" style="margin-left:3.75%;" id="Thu">
+                    <span class="dis-blk mb10">-日</span>
+                    <span class="dis-blk" style="height:35px;">
+                        <img src="/static/img/%e5%a4%a7%e9%83%a8%e5%a4%9a%e4%ba%91S.png" />
+                    </span>
+                    <span class="dis-blk">--</span>
+                    <span class="dis-blk">°C ~ °C</span>
+                </div>
+                <div class="fl w15p" style="margin-left:3.75%;" id="Fri">
+                    <span class="dis-blk mb10">-日</span>
+                    <span class="dis-blk" style="height:35px;">
+                        <img src="/static/img/%e5%a4%a7%e9%83%a8%e5%a4%9a%e4%ba%91S.png" />
+                    </span>
+                    <span class="dis-blk">--</span>
+                    <span class="dis-blk">°C ~ °C</span>
+                </div>
+                <div class="fl w15p" style="margin-left:3.75%;" id="Sat">
+                    <span class="dis-blk mb10">-日</span>
+                    <span class="dis-blk" style="height:35px;">
+                        <img src="/static/img/%e5%a4%a7%e9%83%a8%e5%a4%9a%e4%ba%91S.png" />
+                    </span>
+                    <span class="dis-blk">--</span>
+                    <span class="dis-blk">°C ~ °C</span>
+                </div>
+                <div class="fl w15p" style="margin-left:3.75%;" id="Sun">
+                    <span class="dis-blk mb10">-日</span>
+                    <span class="dis-blk" style="height:35px;">
+                        <img src="/static/img/%e5%a4%a7%e9%83%a8%e5%a4%9a%e4%ba%91S.png" />
+                    </span>
+                    <span class="dis-blk">--</span>
+                    <span class="dis-blk">°C ~ °C</span>
+                </div>
+            </center>
+            
+        </section>
+        <section class="MainCalendar flo">
+            <div class="DE_head">
+                <img src="/static/img/%e6%97%a5%e5%8e%86@2x.png" width="26" height="20" />
+                <span>日历</span>
+            </div>
+            <div class="fl w65p">
+                <div class="t-calendar">
+                    <div id="t-ca">
+                        <div id="ca"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="fr w34p">
+                <div class="C_Info">
+                    <div class="C_Dot"></div>
+                    今日投喂
+                </div>
+                <div class="times">
+                    <ul>
+                        <li>
+                            <div class="TimeFish">
+                                <img src="/static/img/%e9%b1%bc@2x.png" width="24" />
+                            </div>
+                            <span>投喂药品</span>
+                            <p id="Candl_1" style="color:#5a8bff">0包</p>
+                        </li>
+                        <li>
+                            <div class="TimeFish">
+                                <img src="/static/img/鱼@2x.png" width="24"  />
+                                </div>
+                            <span>投喂饲料</span>
+                            <p id="Candl_2" style="color:#5a8bff">0斤</p>
+                        </li>
+                        <li>
+                            <div class="TimeFish">
+                                <img src="/static/img/鱼@2x.png" width="24"  />
+                            </div>
+                            <span>投放鱼苗</span>
+                            <p id="Candl_3" style="color:#5a8bff">0尾</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <section class="MainData flo">
+            <div class="MainDataOne">
+                <div class="DE_head">
+                    <img src="/static/img/%e5%9f%ba%e5%9c%b0%e6%a6%82%e5%86%b5@2x.png" width="22" height="26" />
+                    <span>塘口面积</span>
+                </div>
+                <div id="PondArea" class="PondDe"></div>
+                <center style="font-size:12px;">
+                    <ul id="mjlegend" class="flo"></ul>
+                </center>
+            </div>
+
+            <div class="MainDataTwo">
+                <div class="DE_head">
+                    <img src="/static/img/%e5%9f%ba%e5%9c%b0%e6%a6%82%e5%86%b5@2x.png" width="22" height="26" />
+                    <span>塘口数量</span>
+                </div>
+                <div id="PondNum" class="PondDe"></div>
+                <center style="font-size:12px;">
+                    <ul id="tklegend" class="flo"></ul>
+                </center>
+            </div>
+        </section>
+    </section>
+        
+</div>
+
+
+
+
+
+                <div class="modal fade" id="modal_delete" tabindex="-1" role="dialog" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="btn-close close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                <h4 class="modal-title pr c-fff" id="modalTital">温馨提示</h4>
+                            </div>
+                            <center class="mt5p">
+                                <h4>确定要删除吗?</h4>
+                                <img src="/static/img/%e5%88%a0%e9%99%a4%e6%8f%90%e7%a4%ba@2x.png" />
+
+                                <center>
+                                    <div class="bc-fff pb20">
+                                        <input type="button" class="btn-mod-consider" data-dismiss="modal" value="再考虑一下">
+                                        <input type="button" id="deletethis" class="btn-mod-submit" value="确定" style="margin-left:122px;">
+                                    </div>
+                                </center>
+                            </center>
+                        </div>
+                    </div>
+                </div>
+                <!-- /Page Body -->
+            </div>
+            <!-- /Page Content -->
+        </div>
+        <!-- /Page Container -->
+        <!-- Main Container -->
+
+    </div>
+
+    <!--Basic Scripts-->
+
+    
+
+
+</body>
+<!--  /Body -->
+</html>

@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <include file="../python/view/head.html"></include>
+</head>
+<body>
+<div class="page-content backsize">
+    <!-- Page Body -->
+
+
+
+    <!--业务区 高能 请绕行-->
+    <div class="dis-Main">
+
+        <div>
+            <div class="equ-ctr">
+                <section class="EquPartOne flo mb10">
+                    <div class="head">
+                        <font>设备控制</font>
+                    </div>
+                    <div class="equ-ctr-sel">
+                        <div class="btn-group bootstrap-select form-control"><button type="button" class="btn dropdown-toggle bs-placeholder btn-default" data-toggle="dropdown" role="button" data-id="pondSelect" title="没有选中任何项"><span class="filter-option pull-left">没有选中任何项</span>&nbsp;<span class="bs-caret"><span class="caret"></span></span></button><div class="dropdown-menu open" role="combobox"><ul class="dropdown-menu inner" role="listbox" aria-expanded="false"></ul></div><select class="selectpicker form-control" id="pondSelect" tabindex="-98"></select></div>
+                    </div>
+                    <div class="fr">
+                        <button onclick="reLoad()" class="BtnRefresh mr28">刷新</button>
+                        <button class="BtnSet mr72" onclick="goBound()">设置</button>
+                    </div>
+                </section>
+
+                <!--顶部标题  塘口-->
+
+                <!--顶部标题 塘口 结束-->
+                <section class="EquPartTwo flo">
+                    <div class="DE_head">
+                        <img src="/Images/assets/img/Nxin/%e6%b0%b4%e8%b4%a8%e5%8f%82%e6%95%b0-%e8%ae%be%e5%a4%87%e6%8e%a7%e5%88%b6@2x.png" style="width:20px;">
+                        <span>水质参数</span>
+                    </div>
+                    <div class="wed_1 cp" id="rongjieyang">
+                        <div class="wed_font_head">溶解氧</div>
+                        <div class="CardBottom">
+                            <img id="DO-img" src="/Images/assets/img/Nxin/%e6%ba%b6%e8%a7%a3%e6%b0%a7@2x.png">
+                            <div class="wed_font_foot">
+                                <font>当前: <font class="DO">--</font>mg/L</font><br>
+                                <font>正常: <font id="DO_min">3</font>-<font id="DO_max">12</font>mg/l</font>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="wed_2 cp" id="shuiwen">
+                        <div class="wed_font_head">水温</div>
+                        <div class="CardBottom">
+                            <img id="water_temP-img" src="/Images/assets/img/Nxin/%e6%b0%b4%e6%b8%a9@2x.png">
+                            <div class="wed_font_foot">
+                                <font>当前: <font class="water_temP">--</font>°C</font><br>
+                                <font>正常: <font id="water_min">9</font>-<font id="water_max">32</font>°C</font>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="wed_3 cp" id="yanghuadian">
+                        <div class="wed_font_head">氧化电还原</div>
+                        <div class="CardBottom">
+                            <img id="oxydic-img" src="/Images/assets/img/Nxin/%e6%b0%a7%e5%8c%96%e7%94%b5%e8%bf%98%e5%8e%9f@2x.png">
+                            <div class="wed_font_foot">
+                                <font>当前: <font class="oxydic" name="small">--</font>mg/L</font><br>
+                                <font>正常: <font id="ORP_min">200</font>-<font id="ORP_max">500</font>mg/L</font>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="wed_4 cp" id="phzhi">
+                        <div class="wed_font_head">ph值</div>
+                        <div class="CardBottom">
+                            <img id="PH-img" style="width:65px;" src="/Images/assets/img/Nxin/pH@2x.png">
+                            <div class="wed_font_foot">
+                                <font>当前: <font class="PH" name="big">--</font></font><br>
+                                <font>正常: <font id="PH_min">6.5</font>-<font id="PH_max">9</font></font>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="EquPartThree">
+                    <img src="/Images/assets/img/Nxin/%e6%99%ba%e8%83%bd%e8%ae%be%e5%a4%87%e8%bf%9c%e7%a8%8b%e6%8e%a7%e5%88%b6@2x.png" style="width:28px;">
+                    <span>智能设备远程控制</span>
+                </section>
+
+                <!--中部警报区域 结束-->
+                <!--底部智能开关-->
+                <section class="EquPartFour">
+
+                    <div class="SameBlock flo">
+                        <div class="fl tac w12_5p">
+                            <div class="mb10p">
+                                <img class="cp" id="zy-img-1" src="/Images/assets/img/Nxin/%e5%a2%9e%e6%b0%a7%e6%9c%ba.png" onclick="off_on_img(this)">
+                            </div>
+                            <div class="mt10 mb10" style="height: 18px;">
+                                <label>
+                                    <input id="zy1" class="checkbox-slider1 colored-withe toggle" type="checkbox" onclick="off_on_input(this)">
+                                    <span class="text"></span>
+                                </label>
+                            </div>
+                            <span class="EquName">增氧机一号</span>
+                        </div>
+                        <div class="fl tac w12_5p" style="margin-top: 18px;">
+                            <div class="mb10p">
+                                <img class="cp" id="tl-img-1" src="/Images/assets/img/Nxin/%e6%8a%95%e6%96%99%e6%9c%ba.png" onclick="off_on_img(this)">
+                            </div>
+                            <div class="mt10 mb10" style="height: 18px;">
+                                <label>
+                                    <input id="tl1" class="checkbox-slider1 toggle colored-withe" type="checkbox" onclick="off_on_input(this)">
+                                    <span class="text"></span>
+                                </label>
+                            </div>
+                            <span class="EquName">投料机一号</span>
+                        </div>
+                    </div>
+                </section>
+                <section class="EquPartFive" style="height: 206px;">
+
+
+                </section>
+
+
+
+                <!--底部智能开关 结束-->
+            </div>
+        </div>
+    </div>
+
+    <center id="noneControl" class="dis-none" style="padding-top:10%;background-color:#fff !important;height:90vh">
+        <div>
+            <img src="/Images/assets/img/Nxin/%e5%b0%9a%e6%9c%aa%e6%8e%a5%e5%85%a5%e8%ae%be%e5%a4%87@2x.png">
+        </div>
+        <div class="mt3p" style="font-size: 1vw;color:#000">
+            尚未接入设备
+        </div>
+        <div style="font-size: 1vw;color:#000">
+            快去联系管理员吧
+        </div>
+    </center>
+
+
+
+
+
+    <div class="modal fade" id="modal_delete" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="btn-close close" data-dismiss="modal" aria-hidden="true">×</button>
+                    <h4 class="modal-title pr c-fff" id="modalTital">温馨提示</h4>
+                </div>
+                <center class="mt5p">
+                    <h4>确定要删除吗?</h4>
+                    <img src="/Images/assets/img/Nxin/%e5%88%a0%e9%99%a4%e6%8f%90%e7%a4%ba@2x.png">
+
+                    <center>
+                        <div class="bc-fff pb20">
+                            <input type="button" class="btn-mod-consider" data-dismiss="modal" value="再考虑一下">
+                            <input type="button" id="deletethis" class="btn-mod-submit" value="确定" style="margin-left:122px;">
+                        </div>
+                    </center>
+                </center>
+            </div>
+        </div>
+    </div>
+    <!-- /Page Body -->
+</div>
+</body>
+</html>

@@ -1,0 +1,1839 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+{% include 'head.html' %}
+</head>
+<body style="">
+    <!-- Loading Container -->
+    <div class="loading-container loading-inactive">
+        <div class="loading-progress">
+            <div class="rotator">
+                <div class="rotator">
+                    <div class="rotator colored">
+                        <div class="rotator">
+                            <div class="rotator colored">
+                                <div class="rotator colored"></div>
+                                <div class="rotator"></div>
+                            </div>
+                            <div class="rotator colored"></div>
+                        </div>
+                        <div class="rotator"></div>
+                    </div>
+                    <div class="rotator"></div>
+                </div>
+                <div class="rotator"></div>
+            </div>
+            <div class="rotator"></div>
+        </div>
+    </div>
+    <!--  /Loading Container -->
+    <!-- Navbar -->
+    <div class="navbar mt navbar-fixed-top">
+        <div class="navbar-inner">
+            <div class="navbar-container">
+                <!-- Navbar Barnd -->
+                <div class="navbar-header pull-left nav_head_left">
+                    <div class="nav_logo">
+                        <img class="cp" src="/static/img/logo2.0.png" onclick="backgo()" width="90px" alt="">
+                        <span class="cp">V2.2.0</span>
+                    </div>
+
+
+                    <div class="sidebar-collapse" id="sidebar-collapse">
+                        <i style="color:#fff" class="collapse-icon fa fa-bars"></i>
+                    </div>
+                </div>
+                <!-- /Navbar Barnd -->
+                <!-- Sidebar Collapse -->
+
+                <!-- /Sidebar Collapse -->
+                <!--
+                    作者：352183987@qq.com
+                    时间：2017-07-05
+                    描述：Weacher
+                -->
+
+
+                <!-- Account Area and Settings --->
+                <div class="navbar-header pull-right">
+                    <div class="navbar-account">
+                        <ul class="account-area" style="margin-top:8px">
+                            <li style="width: 200px;text-align: center;">
+                                <a class="login-area dropdown-toggle menu1" data-toggle="dropdown">
+                                    <section>
+                                        <h2>
+                                            <span class="profile"><span><font id="base" style="color:#fff">混养基地</font></span></span>
+                                        </h2>
+                                    </section>
+                                </a>
+                                <nav style="position:absolute">
+
+
+                                    <ul class="dropDown1 cxf"><li><a href="" onclick="clik(this)" id="6107744842">混养基地</a></li><li><a href="" onclick="clik(this)" id="2470725783667712">南美对虾基地</a></li></ul>
+                                </nav>
+                                <i style="position: absolute;top: 20px;color:#fff" class="fa  fa-caret-down"></i>
+                            </li>
+
+                            <li>
+
+                                <a class="login-area dropdown-toggle menu" data-toggle="dropdown">
+                                    <div class="avatar bl-none" title="View your public profile">
+                                        <img id="userHeadImage" src="/static/img/headimg.png">
+                                    </div>
+                                    <section style="width: 124px;">
+                                        <h2>
+                                            <span class="profile"><span><font id="PersonName" style="color:#fff">王东石,你好</font><i style="color:#fff" class="fa  fa-caret-down"></i></span></span>
+                                        </h2>
+                                    </section>
+                                </a>
+                                <nav>
+
+
+                                    <ul class="dropDown zxm">
+                                        <li id="companychange">
+                                            <a href="#">公司切换</a>
+                                            <ul class="dropDown2" style="display:none"><li onclick="Comclik(this)"><a href="#" id="1510252" style="color: rgb(90, 140, 255);">东石渔场</a></li></ul>
+                                        </li>
+                                        <li><a href="http://wo.nxin.com/index.html" target="_blank">个人中心</a></li>
+                                        <li><a href="http://wo.nxin.com/index.html#/ent" target="_blank">企业认证</a></li>
+                                        <li><a href="http://ylw.nxin.com/EnterpriseBigData/Main/Enterprise" target="_blank">企业实时运行平台</a></li>
+                                        <li><a onclick="delAllCookie()" href="javascript:void(0);">退出登录</a></li>
+                                    </ul>
+
+                                </nav>
+
+
+                                <!--Login Area Dropdown-->
+
+                                <!--/Login Area Dropdown-->
+                            </li>
+                            <!-- /Account Area -->
+                            <!-- Settings -->
+                        </ul>
+                        <div class="setting" style="display:none">
+                            <a id="btn-setting" title="Setting" href="#">
+                                <i class="icon glyphicon glyphicon-cog"></i>
+                            </a>
+                        </div>
+                        <div class="setting-container">
+                            <label>
+                                <input type="checkbox" id="checkbox_fixednavbar" checked="">
+                                <span class="text">固定导航栏</span>
+                            </label>
+                            <label>
+                                <input type="checkbox" id="checkbox_fixedsidebar" checked="">
+                                <span class="text">固定侧边栏</span>
+                            </label>
+                            <label>
+                                <input type="checkbox" id="checkbox_fixedbreadcrumbs" checked="">
+                                <span class="text">固定面包屑导航</span>
+                            </label>
+                            <label>
+                                <input type="checkbox" id="checkbox_fixedheader" checked="">
+                                <span class="text">固定整个导航</span>
+                            </label>
+                        </div>
+                        <!-- Settings -->
+                    </div>
+                </div>
+                <!-- /Account Area and Settings -->
+            </div>
+        </div>
+    </div>
+    <!-- /Navbar -->
+    <!-- Main Container -->
+    <div class="main-container container-fluid" style="background-color: #F0F3FA !important;">
+        <!-- Page Container -->
+        <div class="page-container">
+            <!-- Page Sidebar -->
+            <div class="page-sidebar sidebar-fixed" id="sidebar">
+                <!-- Sidebar Menu -->
+
+<div>
+    <ul class="nav sidebar-menu" id="MenuSideBig">
+        <!--Dashboard-->
+
+        <!--Databoxes-->
+                <li id="设备管理_MSS" class="open">
+
+                    <a class="menu-dropdown" id="设备管理_A">
+
+                        <span class="menu-text"> 设备管理  </span>
+                        <i class="menu-expand fa fa-caret-right"></i>
+                    </a>
+                    <ul class="submenu" id="设备管理_MSSS">
+                            <li class="active">
+
+                                <a href="/znmanager/equipment/index">
+                                    <img src="/static/img/设备控制CK.png" width="24" height="24">
+                                    <span class="menu-text">设备控制</span>
+                                </a>
+
+                            </li>
+                            <li class="">
+
+                                <a href="/znmanager/equipment/videoindex_jump">
+                                    <img src="/static/img/视频监控.png" width="24" height="24">
+                                    <span class="menu-text">视频监控</span>
+                                </a>
+
+                            </li>
+                            <li class="">
+
+                                <a href="/znmanager/waterquality/index">
+                                    <img src="/static/img/水质参数.png" width="24" height="24">
+                                    <span class="menu-text">水质参数</span>
+                                </a>
+
+                            </li>
+                    </ul>
+                </li>
+                <li id="饲养管理_MSS">
+
+                    <a class="menu-dropdown" id="饲养管理_A">
+
+                        <span class="menu-text"> 饲养管理  </span>
+                        <i class="menu-expand fa fa-caret-right"></i>
+                    </a>
+                    <ul class="submenu" id="饲养管理_MSSS">
+                            <li class="">
+
+                                <a href="/msmanger/budget/index">
+                                    <img src="/static/img/生产计划.png" width="24" height="24">
+                                    <span class="menu-text">生产计划</span>
+                                </a>
+
+                            </li>
+                            <li class="">
+
+                                <a href="/msmanger/fodder/index">
+                                    <img src="/static/img/用料管理.png" width="24" height="24">
+                                    <span class="menu-text">用料管理</span>
+                                </a>
+
+                            </li>
+                            <li class="">
+
+                                <a href="/msmanger/medicine/index">
+                                    <img src="/static/img/用药管理.png" width="24" height="24">
+                                    <span class="menu-text">用药管理</span>
+                                </a>
+
+                            </li>
+                            <li class="">
+
+                                <a href="/msmanger/fishfry/index">
+                                    <img src="/static/img/放苗管理.png" width="24" height="24">
+                                    <span class="menu-text">放苗管理</span>
+                                </a>
+
+                            </li>
+                            <li class="">
+
+                                <a href="/msmanger/sample/index">
+                                    <img src="/static/img/打样管理.png" width="24" height="24">
+                                    <span class="menu-text">打样管理</span>
+                                </a>
+
+                            </li>
+                            <li class="">
+
+                                <a href="/msmanger/loss/index">
+                                    <img src="/static/img/损耗管理.png" width="24" height="24">
+                                    <span class="menu-text">损耗管理</span>
+                                </a>
+
+                            </li>
+                    </ul>
+                </li>
+                <li id="购销管理_MSS">
+
+                    <a class="menu-dropdown" id="购销管理_A">
+
+                        <span class="menu-text"> 购销管理  </span>
+                        <i class="menu-expand fa fa-caret-right"></i>
+                    </a>
+                    <ul class="submenu" id="购销管理_MSSS">
+                            <li class="">
+
+                                <a href="/msmanger/salespurchase/fodderpurchase">
+                                    <img src="/static/img/进料管理.png" width="24" height="24">
+                                    <span class="menu-text">进料管理</span>
+                                </a>
+
+                            </li>
+                            <li class="">
+
+                                <a href="/msmanger/salespurchase/medicinepurchase">
+                                    <img src="/static/img/进药管理.png" width="24" height="24">
+                                    <span class="menu-text">进药管理</span>
+                                </a>
+
+                            </li>
+                            <li class="">
+
+                                <a href="/msmanger/salespurchase/fishfrypurchase">
+                                    <img src="/static/img/进苗管理.png" width="24" height="24">
+                                    <span class="menu-text">进苗管理</span>
+                                </a>
+
+                            </li>
+                            <li class="">
+
+                                <a href="/msmanger/fishcatch/index">
+                                    <img src="/static/img/出塘管理.png" width="24" height="24">
+                                    <span class="menu-text">出塘管理</span>
+                                </a>
+
+                            </li>
+                    </ul>
+                </li>
+                <li id="费用管理_MSS">
+
+                    <a class="menu-dropdown" id="费用管理_A">
+
+                        <span class="menu-text"> 费用管理  </span>
+                        <i class="menu-expand fa fa-caret-right"></i>
+                    </a>
+                    <ul class="submenu" id="费用管理_MSSS">
+                            <li class="">
+
+                                <a href="/msmanger/costother/index">
+                                    <img src="/static/img/费用管理.png" width="24" height="24">
+                                    <span class="menu-text">费用管理</span>
+                                </a>
+
+                            </li>
+                    </ul>
+                </li>
+                <li id="报表统计_MSS">
+
+                    <a class="menu-dropdown" id="报表统计_A">
+
+                        <span class="menu-text"> 报表统计  </span>
+                        <i class="menu-expand fa fa-caret-right"></i>
+                    </a>
+                    <ul class="submenu" id="报表统计_MSSS">
+                            <li class="">
+
+                                <a href="/msmanger/chart/pondsituation">
+                                    <img src="/static/img/塘口概况.png" width="24" height="24">
+                                    <span class="menu-text">塘口概况</span>
+                                </a>
+
+                            </li>
+                            <li class="">
+
+                                <a href="/msmanger/chart/productionreport">
+                                    <img src="/static/img/生产报表.png" width="24" height="24">
+                                    <span class="menu-text">生产报表</span>
+                                </a>
+
+                            </li>
+                            <li class="">
+
+                                <a href="/msmanger/chart/receiptschart">
+                                    <img src="/static/img/收益报表.png" width="24" height="24">
+                                    <span class="menu-text">收益报表</span>
+                                </a>
+
+                            </li>
+                            <li class="">
+
+                                <a href="/msmanger/chart/sumpay#tblist_base">
+                                    <img src="/static/img/收支排名表.png" width="24" height="24">
+                                    <span class="menu-text">收支排名表</span>
+                                </a>
+
+                            </li>
+                            <li class="">
+
+                                <a href="/msmanger/chart/repertoryreport">
+                                    <img src="/static/img/库存报表.png" width="24" height="24">
+                                    <span class="menu-text">库存报表</span>
+                                </a>
+
+                            </li>
+                            <li class="">
+
+                                <a href="/msmanger/chart/fishcatchreport">
+                                    <img src="/static/img/出塘报表.png" width="24" height="24">
+                                    <span class="menu-text">出塘报表</span>
+                                </a>
+
+                            </li>
+                            <li class="">
+
+                                <a href="/msmanger/chart/lossreport">
+                                    <img src="/static/img/损失分析.png" width="24" height="24">
+                                    <span class="menu-text">损失分析</span>
+                                </a>
+
+                            </li>
+                    </ul>
+                </li>
+                <li id="渔场设置_MSS">
+
+                    <a class="menu-dropdown" id="渔场设置_A">
+
+                        <span class="menu-text"> 渔场设置  </span>
+                        <i class="menu-expand fa fa-caret-right"></i>
+                    </a>
+                    <ul class="submenu" id="渔场设置_MSSS">
+                            <li class="">
+
+                                <a href="/bsmanager/pondtype/index">
+                                    <img src="/static/img/塘口类型.png" width="24" height="24">
+                                    <span class="menu-text">塘口类型</span>
+                                </a>
+
+                            </li>
+                            <li class="">
+
+                                <a href="/bsmanager/pond/pondsetview">
+                                    <img src="/static/img/塘口设置.png" width="24" height="24">
+                                    <span class="menu-text">塘口设置</span>
+                                </a>
+
+                            </li>
+                            <li class="">
+
+                                <a href="/bsmanager/batchmanage/index">
+                                    <img src="/static/img/批次设置.png" width="24" height="24">
+                                    <span class="menu-text">批次设置</span>
+                                </a>
+
+                            </li>
+                            <li class="">
+
+                                <a href="/bsmanager/product/index">
+                                    <img src="/static/img/物资设置.png" width="24" height="24">
+                                    <span class="menu-text">物资设置</span>
+                                </a>
+
+                            </li>
+                            <li class="">
+
+                                <a href="/bsmanager/customer/index">
+                                    <img src="/static/img/购销单位设置.png" width="24" height="24">
+                                    <span class="menu-text">购销单位设置</span>
+                                </a>
+
+                            </li>
+                            <li class="">
+
+                                <a href="/msmanger/costtype/index">
+                                    <img src="/static/img/费用设置.png" width="24" height="24">
+                                    <span class="menu-text">费用设置</span>
+                                </a>
+
+                            </li>
+                    </ul>
+                </li>
+                <li id="公司设置_MSS">
+
+                    <a class="menu-dropdown" id="公司设置_A">
+
+                        <span class="menu-text"> 公司设置  </span>
+                        <i class="menu-expand fa fa-caret-right"></i>
+                    </a>
+                    <ul class="submenu" id="公司设置_MSSS">
+                            <li class="">
+
+                                <a href="/bsmanager/company/editcompany">
+                                    <img src="/static/img/公司资料.png" width="24" height="24">
+                                    <span class="menu-text">公司资料</span>
+                                </a>
+
+                            </li>
+                            <li class="">
+
+                                <a href="/bsmanager/pondbase/index">
+                                    <img src="/static/img/基地管理.png" width="24" height="24">
+                                    <span class="menu-text">基地管理</span>
+                                </a>
+
+                            </li>
+                            <li class="">
+
+                                <a href="/bsmanager/department/index">
+                                    <img src="/static/img/部门管理.png" width="24" height="24">
+                                    <span class="menu-text">部门管理</span>
+                                </a>
+
+                            </li>
+                            <li class="">
+
+                                <a href="/stmanager/role/index">
+                                    <img src="/static/img/人员管理.png" width="24" height="24">
+                                    <span class="menu-text">人员管理</span>
+                                </a>
+
+                            </li>
+                    </ul>
+                </li>
+    </ul>
+
+    <ul class="BigMenu dis-none" id="MenuSideSmall">
+                <li id="MSS_设备管理" onclick="SmallBig(this)">
+                    <img src="/static/img/S1.png" width="34">
+                    <p>设备管理</p>
+                </li>
+                <li id="MSS_饲养管理" onclick="SmallBig(this)">
+                    <img src="/static/img/S2.png" width="34">
+                    <p>饲养管理</p>
+                </li>
+                <li id="MSS_购销管理" onclick="SmallBig(this)">
+                    <img src="/static/img/S3.png" width="34">
+                    <p>购销管理</p>
+                </li>
+                <li id="MSS_费用管理" onclick="SmallBig(this)">
+                    <img src="/static/img/S4.png" width="34">
+                    <p>费用管理</p>
+                </li>
+                <li id="MSS_报表统计" onclick="SmallBig(this)">
+                    <img src="/static/img/S5.png" width="34">
+                    <p>报表统计</p>
+                </li>
+                <li id="MSS_渔场设置" onclick="SmallBig(this)">
+                    <img src="/static/img/S6.png" width="34">
+                    <p>渔场设置</p>
+                </li>
+                <li id="MSS_公司设置" onclick="SmallBig(this)">
+                    <img src="/static/img/S7.png" width="34">
+                    <p>公司设置</p>
+                </li>
+    </ul>
+</div>
+
+
+<!-- class="active"-->
+                <!-- /Sidebar Menu -->
+            </div>
+            <!-- /Page Sidebar -->
+            <!-- Page Content -->
+            <div class="page-content backsize">
+                <!-- Page Body -->
+
+
+
+<!--业务区 高能 请绕行-->
+<div class="dis-Main">
+
+    <div>
+        <div class="equ-ctr">
+            <section class="EquPartOne flo mb10">
+                <div class="head">
+                    <font>设备控制</font>
+                </div>
+                <div class="equ-ctr-sel">
+                    <div class="btn-group bootstrap-select form-control">
+                       
+
+                        <select class="selectpicker form-control" id="pondSelect" tabindex="-98">
+                            <option value="2349894086509568" data-n="XYZ-0001">XYZ-0001(草鱼混养1塘口)</option>
+                            <option value="0" data-n="XYZ-0002">XYZ-0002</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="fr">
+                    <button onclick="reLoad()" class="BtnRefresh mr28">刷新</button>
+                    <button class="BtnSet mr72" onclick="goBound()">设置</button>
+                </div>
+            </section>
+
+            <!--顶部标题  塘口-->
+
+            <!--顶部标题 塘口 结束-->
+            <section class="EquPartTwo flo">
+                <div class="DE_head">
+                    <img src="/static/img/%e6%b0%b4%e8%b4%a8%e5%8f%82%e6%95%b0-%e8%ae%be%e5%a4%87%e6%8e%a7%e5%88%b6@2x.png" style="width:20px;">
+                    <span>水质参数</span>
+                </div>
+                <div class="wed_1 cp" id="rongjieyang">
+                    <div class="wed_font_head">溶解氧</div>
+                    <div class="CardBottom">
+                        <img id="DO-img" src="../../static/img/溶解氧@2x.png">
+                        <div class="wed_font_foot">
+                            <font>当前: <font class="DO">2.3</font>mg/L</font><br>
+                            <font>正常: <font id="DO_min">2</font>-<font id="DO_max">7</font>mg/l</font>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="wed_2 cp" id="shuiwen">
+                    <div class="wed_font_head">水温</div>
+                    <div class="CardBottom">
+                        <img id="water_temP-img" src="../../static/img/水温@2x.png">
+                        <div class="wed_font_foot">
+                            <font>当前: <font class="water_temP">19.5</font>°C</font><br>
+                            <font>正常: <font id="water_min">0</font>-<font id="water_max">20.01</font>°C</font>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="wed_3 cp" id="yanghuadian">
+                    <div class="wed_font_head">氧化电还原</div>
+                    <div class="CardBottom">
+                        <img id="oxydic-img" src="../../static/img/氧化电还原@2x.png">
+                        <div class="wed_font_foot">
+                            <font>当前: <font class="oxydic" name="small">0</font>mg/L</font><br>
+                            <font>正常: <font id="ORP_min">-1999</font>-<font id="ORP_max">1999</font>mg/L</font>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="wed_4 cp" id="phzhi">
+                    <div class="wed_font_head">ph值</div>
+                    <div class="CardBottom">
+                        <img id="PH-img" style="width:65px;" src="../../static/img/pH@2x.png">
+                        <div class="wed_font_foot">
+                            <font>当前: <font class="PH" name="big">8.41</font></font><br>
+                            <font>正常: <font id="PH_min">0</font>-<font id="PH_max">14</font></font>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="EquPartThree">
+                <img src="/static/img/%e6%99%ba%e8%83%bd%e8%ae%be%e5%a4%87%e8%bf%9c%e7%a8%8b%e6%8e%a7%e5%88%b6@2x.png" style="width:28px;">
+                <span>智能设备远程控制</span>
+            </section>
+
+            <!--中部警报区域 结束-->
+            <!--底部智能开关-->
+            <section class="EquPartFour">
+
+                <div class="SameBlock flo">
+                    <div class="fl tac w12_5p">
+                        <div class="mb10p">
+                            <img class="cp" id="zy-img-1" src="/static/img/增氧机@2x.png" onclick="off_on_img(this)">
+                        </div>
+                        <div class="mt10 mb10" style="height: 18px;">
+                            <label>
+                                <input id="zy1" class="checkbox-slider1 colored-withe toggle" type="checkbox" onclick="off_on_input(this)">
+                                <span class="text"></span>
+                            </label>
+                        </div>
+                        <span class="EquName">增氧机一号</span>
+                    </div>
+                    <div class="fl tac w12_5p" style="margin-top: 18px;">
+                        <div class="mb10p">
+                            <img class="cp" id="tl-img-1" src="/static/img/投料机.png" onclick="off_on_img(this)">
+                        </div>
+                        <div class="mt10 mb10" style="height: 18px;">
+                            <label>
+                                <input id="tl1" class="checkbox-slider1 toggle colored-withe" type="checkbox" onclick="off_on_input(this)">
+                                <span class="text"></span>
+                            </label>
+                        </div>
+                        <span class="EquName">投料机一号</span>
+                    </div>
+                </div>
+            </section>
+            <section class="EquPartFive" style="height: 153px;">
+
+
+            </section>
+
+
+
+            <!--底部智能开关 结束-->
+        </div>
+    </div>
+</div>
+
+<center id="noneControl" class="dis-none" style="padding-top:10%;background-color:#fff !important;height:90vh">
+    <div>
+        <img src="/static/img/%e5%b0%9a%e6%9c%aa%e6%8e%a5%e5%85%a5%e8%ae%be%e5%a4%87@2x.png">
+    </div>
+    <div class="mt3p" style="font-size: 1vw;color:#000">
+        尚未接入设备
+    </div>
+    <div style="font-size: 1vw;color:#000">
+        快去联系管理员吧
+    </div>
+</center>
+
+
+
+
+
+                <div class="modal fade" id="modal_delete" tabindex="-1" role="dialog" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="btn-close close" data-dismiss="modal" aria-hidden="true">×</button>
+                                <h4 class="modal-title pr c-fff" id="modalTital">温馨提示</h4>
+                            </div>
+                            <center class="mt5p">
+                                <h4>确定要删除吗?</h4>
+                                <img src="/static/img/%e5%88%a0%e9%99%a4%e6%8f%90%e7%a4%ba@2x.png">
+
+                                <center>
+                                    <div class="bc-fff pb20">
+                                        <input type="button" class="btn-mod-consider" data-dismiss="modal" value="再考虑一下">
+                                        <input type="button" id="deletethis" class="btn-mod-submit" value="确定" style="margin-left:122px;">
+                                    </div>
+                                </center>
+                            </center>
+                        </div>
+                    </div>
+                </div>
+                <!-- /Page Body -->
+            </div>
+            <!-- /Page Content -->
+        </div>
+        <!-- /Page Container -->
+        <!-- Main Container -->
+
+    </div>
+
+
+
+
+
+<!--  /Body -->
+
+<div class="layui-layer-move"></div>
+  <script>
+        $(function () {
+            var many = $('li .active').length;
+            if (many == 0) {
+                $("#sidebar").is(":visible") || $("#sidebar").addClass("hide");
+                $("#sidebar").addClass("menu-compact");
+                $('#MenuSideBig').addClass('dis-none');
+                $('#MenuSideSmall').removeClass('dis-none');
+                n = $("#sidebar").hasClass("menu-compact");
+                n && $(".open > .submenu").removeClass("open");
+                $('.MainLeft').removeClass('CgW');
+                $('.page-content').removeClass('backsize');
+            } else {
+                $("#sidebar").is(":visible") || $("#sidebar").removeClass("hide");
+                $("#sidebar").removeClass("menu-compact");
+                $('#MenuSideBig').removeClass('dis-none');
+                $('#MenuSideSmall').addClass('dis-none');
+                n = $("#sidebar").hasClass("menu-compact");
+                n && $(".open > .submenu").addClass("open");
+                $('.MainLeft').addClass('CgW');
+                $('.page-content').addClass('backsize');
+            }
+
+        })
+    </script>
+
+ <script>
+        $('#BaseIDS').change(function () {
+            $('#BaseName').val($("#BaseIDS").find("option:selected").text());
+            $('#BaseID').val($("#BaseIDS").find("option:selected").val());
+            $.ajax({
+                url: '/Account/ChangFishBaseIDName',
+                dataType: 'json',
+                type: 'POST',
+                async: false,
+                data: {
+                    FishBaseID: $('#BaseID').val(),
+                    cFishBaseName: $('#BaseName').val()
+                },
+                success: function (data) {
+                    console.log(data);
+
+                    window.location.reload();
+
+                },
+                error: function (xhr, status, error) {
+
+                }
+            });//ajax end
+        })
+
+        $.fn.modal.Constructor.prototype.enforceFocus = function () { }
+
+        function SetCookie(name, value)
+        {
+            var Days = 30;
+            var exp = new Date();
+            exp.setTime(exp.getTime() + Days * 24 * 60 * 60 * 1000);
+            document.cookie = name + "=" + escape(value) + ";expires=" + exp.toGMTString();
+        }
+
+        function twopie(id, data,name) {
+            var myChart = echarts.init(document.getElementById(id));
+            var option = {
+                title: {
+                    text: '',
+                    x: 'center'
+                },
+                tooltip: {
+                    trigger: 'item',
+                    formatter: "{a} <br/>{b} : {c} ({d}%)"
+                },
+                legend: {
+                    show: false,
+                    orient: 'vertical'
+                },
+                series: [
+                    {
+                        name: name,
+                        type: 'pie',
+                        radius: '55%',
+                        center: ['50%', '60%'],
+                        data: data,
+                        color: [
+                            '#89C3F8',
+                            '#F89CF7',
+                            '#9AEED1',
+                            '#71C27D',
+                            '#6B8CDA',
+                            '#FFD965',
+                            '#FFA897',
+                            '#BC8DEE',
+                            '#FF9655',
+                            '#C1B429'
+                        ],
+                        itemStyle: {
+                            emphasis: {
+                                shadowBlur: 10,
+                                shadowOffsetX: 0,
+                                shadowColor: 'rgba(0, 0, 0, .5)'
+                            }
+                        },
+                        label: {
+                            normal: {
+                                show: true,
+                                position: 'outside',
+                                fontStyle: 'normal',
+                                fontFamily: '微软雅黑',
+                                fontSize: 12,
+                                backgroundColor: '#fff',
+                                borderColor: 'transparent',
+                                borderWidth: 10,
+                                borderRadius: 0,
+                                padding: 0,
+                                shadowColor: '#fff',
+                                shadowBlur: 0,
+                                shadowOffsetX: 0,
+                                shadowOffsetY: 0,
+                                textBorderColor: '#fff',
+                                textBorderWidth: 0,
+                                textShadowColor: '#fff',
+                                textShadowBlur: 0,
+                                textShadowOffsetX: 0,
+                                textShadowOffsetY: 0,
+                            }
+                        }
+                    }
+                ]
+            };
+            myChart.setOption(option);
+        }
+
+        function twopie_1(id, data,le,name) {
+            var myChart = echarts.init(document.getElementById(id));
+            var option = {
+                title: {
+                    text: name,
+                    x: 'center',
+                    textStyle: {
+                        color: '#222'
+                    },
+                    top:10
+                },
+                tooltip: {
+                    trigger: 'item',
+                    formatter: "{a} <br/>{b} : {c} ({d}%)"
+                },
+                legend: {
+                    show: true,
+                    orient: 'horizontal',
+                    data: le,
+                    bottom: 10,
+                    selectedMode:false
+                },
+                series: [
+                    {
+                        name:name,
+                        type: 'pie',
+                        radius: '55%',
+                        data: data,
+                        color: [
+                            '#8BD478',
+                            '#FC9DDF',
+                            '#FCB974',
+                            '#fc00fc',
+                            '#1c92cf',
+                            '#04fefc',
+                            '#7cfe04',
+                            '#fc4604'
+                        ],
+                        itemStyle: {
+                            emphasis: {
+                                shadowBlur: 10,
+                                shadowOffsetX: 0,
+                                shadowColor: 'rgba(0, 0, 0, .5)'
+                            }
+                        },
+                        label: {
+                            normal: {
+                                show: true,
+                                position: 'outside',
+                                fontStyle: 'normal',
+                                fontWeight: 'normal',
+                                fontFamily: '微软雅黑',
+                                fontSize: 12,
+                                backgroundColor: 'transparent',
+                                borderColor: 'transparent',
+                                borderWidth: 0,
+                                borderRadius: 0,
+                                padding: 0,
+                                shadowColor: '#fff',
+                                shadowBlur: 0,
+                                shadowOffsetX: 0,
+                                shadowOffsetY: 0,
+                                textBorderColor: '#fff',
+                                textBorderWidth: 0,
+                                textShadowColor: '#fff',
+                                textShadowBlur: 0,
+                                textShadowOffsetX: 0,
+                                textShadowOffsetY: 0,
+                            }
+                        }
+                    }
+                ]
+            };
+            myChart.setOption(option);
+        }
+
+        //$(".sidebar-menu").on("click", function (t) {
+        //    //console.log(t.target);
+        //    var a = t.target;
+        //    //console.log($(t.target).closest("a"));
+        //    var isid = $(t.target).closest("a")[0].id;
+        //    if (isid) {
+        //        $('#' + isid.split('_')[0] + '_MSS').toggleClass('open');
+        //    }
+        //})
+
+
+        function SmallBig(e) {
+            var id = e.id;
+            var nname = id.split("_")[1];
+            $('#' + nname + '_MSS').addClass('open');
+            $("#sidebar").is(":visible") && $("#sidebar").removeClass("hide");
+            $("#sidebar").removeClass("menu-compact");
+            $('#MenuSideBig').removeClass('dis-none');
+            $('#MenuSideSmall').addClass('dis-none');
+            $(".sidebar-collapse").addClass("active");
+            n = $("#sidebar").hasClass("menu-compact");
+            n && $(".open > .submenu").removeClass("open");
+            $('.MainLeft').addClass('CgW');
+            $('.page-content').addClass('backsize');
+            if ($('table').length > 0) {
+                $('table').bootstrapTable('refresh');
+            }
+            setTimeout(function () {
+                var w1 = $(".DataEarn").width() / 2;
+                var h1 = $(".DataEarn").height() - 60;
+                var w2 = $(".DataEarnExpend").width();
+                var h2 = $(".DataEarnExpend").height() - 60;
+                if ($("#SumC_chart").length > 0) {
+                    $("#SumC_chart").highcharts().setSize(w2, h2, false);
+                }
+
+            }, 700)
+
+
+            //var i = $('#' + nname + '_A'),
+            //    u, r, f;
+            //if (i && i.length != 0) {
+            //    if (!i.hasClass("menu-dropdown")) return n && i.get(0).parentNode.parentNode == $('#' + nname + '_MSSS') && (u = i.find(".menu-text").get(0), $('#' + nname + '_MSS').target != u && !$.contains(u, $('#' + nname + '_MSS').target)) ? !1 : void 0;
+            //    if (r = i.next().get(0), !$(r).is(":visible")) {
+            //        if (f = $(r.parentNode).closest("ul"), n && f.hasClass("sidebar-menu")) return;
+            //        f.find("> .open > .submenu").each(function () {
+            //            $('#' + nname + '_MSSS') == r || $($('#' + nname + '_MSSS').parentNode).hasClass("active") || $($('#' + nname + '_MSSS')).slideUp(200).parent().removeClass("open");
+            //            console.log(this);
+            //        })
+            //    }
+            //    return n && $(r.parentNode.parentNode).hasClass("sidebar-menu") ? !1 : ($(r).slideToggle(200).parent().toggleClass("open"), !1)
+            //}
+        }
+
+
+        $('#modal_delete').on('show.bs.modal', function (e) {
+            // 关键代码，如没将modal设置为 block，则$modala_dialog.height() 为零
+            $(this).css('display', 'block');
+            var modalHeight = $(window).height() / 2 - $('#modal_delete .modal-dialog').height() / 2;
+            $(this).find('.modal-dialog').css({
+                'margin-top': modalHeight
+            });
+        });
+        function backgo() {
+            window.location.href = '/main';
+        }
+
+        $('.menu').click(function () {
+
+            $('.dropDown').slideDown("fast");
+            $('.dropDown1').slideUp('fast');
+            //$('.dropDown').fadeIn("fast");
+            //$('.dropDown1').fadeOut('fast');
+        });
+
+        $('.zxm').hover(function () {
+        }, function () {
+            $('.dropDown').slideUp('fast');
+            //$('.dropDown').fadeOut('fast');
+        });
+        function clik(e) {
+            $('#base').html(e.text);
+            $('.dropDown1').slideUp('fast');
+            ChangBase(e.text, e.id);
+            //$('.dropDown1').fadeOut('fast');
+        }
+        function Comclik(e) {
+            var child = e.childNodes;
+            ChangCompany(child[0].text, child[0].id);
+
+        }
+
+            function BaseName1() {
+                $.ajax({
+                    url: '/Account/GetPondBaseByUser',
+                    dataType: 'json',
+                    type: 'POST',
+                    async: false,
+                    success: function (data) {
+                        //console.log(data);
+                        var Getdata = data.data;
+                        //console.log(Getdata);
+                        var str = '';
+                        if (data.type == 3) {
+                            layer.msg('已超时,请重新登录!');
+                            delAllCookie();
+                            setTimeout(function () {
+                                window.location.href = "http://ylw.nxin.com/Account/Login";
+                            },2000)
+
+                        } else if (Getdata) {
+                            $('.dropDown1').get(0).innerHTML = '';
+                            for (var i in Getdata) {
+                                var name = Getdata[i].cFishBaseName;
+
+                                if (name == undefined) {
+                                    name = '暂无基地名称';
+                                }
+                                if (i == 0) {
+                                    $('#base').html(name);
+                                }
+                                str += '<li><a href="" onclick="clik(this)" id="' + Getdata[i].FishBaseID + '">' + name + '</a ></li >';
+
+                            }
+                            $('.dropDown1').append(str);
+
+                            $('.menu1').click(function () {
+                                $('.dropDown1').slideDown("fast");
+                                $('.dropDown').slideUp('fast');
+                            });
+
+                            $('#companychange').hover(function () {
+
+                                $(".dropDown2").fadeIn("fast");
+                                $('.dropDown').addClass('b-t-l');
+                            }, function () {
+                                $(".dropDown2").fadeOut('fast');
+                                //$(".dropDown2").animate({ right: '0px' });
+                                $('.dropDown').removeClass('b-t-l');
+                                //$(".dropDown2").removeclass('z-in');
+                            });
+
+                            $('.cxf').hover(function () {
+                            }, function () {
+                                $('.dropDown1').slideUp('fast');
+                                //$('.dropDown1').fadeOut('fast');
+                            });
+
+                        } else {
+
+                        }
+
+
+
+                    },
+                    error: function (xhr, status, error) {
+
+
+                    }
+                });//ajax end
+        }
+
+
+            function ChangBase(name, ID) {
+                $.ajax({
+                    url: '/Account/ChangFishBaseIDName',
+                    dataType: 'json',
+                    type: 'POST',
+                    async: false,
+                    data: {
+                        FishBaseID: ID,
+                        cFishBaseName: name
+                    },
+                    success: function (data) {
+                        console.log(data);
+                        window.location.reload();
+
+                    },
+                    error: function (xhr, status, error) {
+
+                    }
+                });//ajax end
+
+            }
+
+            function ChangCompany(name, ID) {
+                $.ajax({
+                    url: '/Account/ChangeCompanyIDName',
+                    dataType: 'json',
+                    type: 'POST',
+                    async: false,
+                    data: {
+                        CompanyID: ID,
+                        CompanyName: name
+                    },
+                    success: function (data) {
+                        console.log(data);
+                        if (data.type == 3) {
+                            layer.msg(data.message);
+                        } else {
+                            window.location.href = '/main';
+                        }
+
+                    },
+                    error: function (xhr, status, error) {
+                    }
+                });//ajax end
+
+            }
+
+
+            function GetCompany() {
+                $.ajax({
+                    url: '/Account/GetCompanyIDName',
+                    dataType: 'json',
+                    type: 'GET',
+                    async: false,
+                    data: {
+                    },
+                    success: function (data) {
+                        console.log(data);
+                        var Getdata = data.data.Data;
+                        $('#' + Getdata.CompanyID).get(0).style = "color:#5a8cff";
+                    },
+                    error: function (xhr, status, error) {
+
+
+                    }
+                });//ajax end
+            }
+
+            function GetBase1() {
+                $.ajax({
+                    url: '/Account/GetFishBaseIDName',
+                    dataType: 'json',
+                    type: 'GET',
+                    async: false,
+                    data: {
+                    },
+                    success: function (data) {
+                        console.log(data);
+                        var Getdata = data.data.Data;
+                        $('#base').html(Getdata.cFishBaseName);
+                    },
+                    error: function (xhr, status, error) {
+
+
+                    }
+                });//ajax end
+            }
+
+            function ComName() {
+                $.ajax({
+                    url: '/Account/GetCompanyByUser',
+                    dataType: 'json',
+                    type: 'POST',
+                    async: false,
+                    success: function (data) {
+                        console.log(data);
+                        var Getdata = data.data;
+                        console.log(Getdata);
+                        if (data.type == 3) {
+                            layer.msg('已超时,请重新登录!');
+                            delAllCookie();
+                            setTimeout(function () {
+                                window.location.href = "http://ylw.nxin.com/Account/Login";
+                            },2000)
+
+                        } else {
+                            var str = '';
+                            for (var i in Getdata) {
+                                var name = Getdata[i].cCompanyName;
+                                if (name == undefined) {
+                                    name = '暂无公司名称';
+                                }
+                                str += '<li onclick="Comclik(this)"><a href="#" id="' + Getdata[i].CompanyID + '">' + name + '</a ></li >';
+                                //str += '<li><a href="#" id="' + Getdata[i].CompanyID + '">我是标准八个字符</a ></li >';
+
+                            }
+                            $('.dropDown2').append(str);
+                        }
+
+
+
+                    },
+                    error: function (xhr, status, error) {
+
+
+                    }
+                });//ajax end
+            }
+
+            function delAllCookie() {
+            delCookie('MenuList');
+            var myDate = new Date();
+            myDate.setTime(-1000);//设置时间
+            var data = document.cookie;
+            var dataArray = data.split("; ");
+            for (var i = 0; i < dataArray.length; i++) {
+                var varName = dataArray[i].split("=");
+                document.cookie = varName[0] + "=''; expires=" + myDate.toGMTString();
+            }
+
+            window.location.href = '/Account/LogOff';
+            }
+
+            function delCookie(name) {
+                var exp = new Date();
+                exp.setTime(exp.getTime() - 1);
+                var cval = getCookie(name);
+                if (cval != null)
+                    document.cookie = name + "=" + cval + ";expires=" + exp.toGMTString();
+            }
+
+        //if (window.Event)
+        //    document.captureEvents(Event.MOUSEUP);
+
+        //function nocontextmenu() {
+        //    event.cancelBubble = true
+        //    event.returnValue = false;
+
+        //    return false;
+        //}
+
+        //function norightclick(e) {
+        //    if (window.Event) {
+        //        if (e.which == 2 || e.which == 3)
+        //            return false;
+        //    } else if (event.button == 2 || event.button == 3) {
+        //        event.cancelBubble = true
+        //        event.returnValue = false;
+        //        return false;
+        //    }
+
+        //}
+
+        //document.oncontextmenu = nocontextmenu;  // for IE5+
+        //document.onmousedown = norightclick;  //for all others
+
+        window.UserID, window.cLoginName, window.PersonName, window.CompanyID;
+        //暂且删除这个，如果加上这个
+        //$('a').each(function () {
+        //    this.onclick = function () {
+        //        $('li').removeClass('active');
+        //        $(this).parent().addClass('active');
+        //    };
+        //});
+
+        $(function () {
+            //获取登录信息
+            $.getScript("https://cas.nxin.com/cas/v1/tickets/loginApi");
+            ComName();
+            var FirstComId = '';
+            var FirstComName = '';
+            FirstComId = $('.dropDown2')[0].childNodes[0].childNodes[0].id;
+            FirstComName = $('.dropDown2')[0].childNodes[0].childNodes[0].text;
+            BaseName1();
+            GetCompany();
+            GetBase1();
+
+            //获取定位 此处去掉了智农通相关js
+            //去掉田联网接口
+            //selectWeather(39.978048, 116.316578);
+        });
+
+        function loginApi(resp) {
+            UserID = resp.id
+            cLoginName = resp.loginName
+            PersonName = resp.name;
+            $("#UserID").val(UserID);
+            $("#cLoginName").val(cLoginName);
+            if (UserID) {
+                $.ajax({
+                    url: "/home/setLoad",
+                    data: { UserID: UserID },
+                    success: function (a) {
+                        if (a && a.type == 1) {
+                            //已登录 未注册渔联网
+                            if (resp.name) {
+
+                                $("#PersonName").text(PersonName + ",你好");
+                            }
+                            else {
+                                if (resp.loginName) {
+
+                                    $("#PersonName").text(resp.loginName + ",你好");
+                                }
+                            }
+                        }
+                        else if (a.type == 3) {
+                            //已登录 未注册渔联网
+                            window.location.href = "/BSManager/Company/CreateCompany";
+                        }
+                        else {
+                            window.location.href = "/account/login";
+                        }
+                    }
+                })
+                $.get("/account/GetUserHeadImage", { bo_id: UserID }, function (data) {
+                    if (data != "")
+                        $("#userHeadImage").attr("src", data);
+                })
+
+            }
+
+
+
+        };
+
+        //读取cookie
+        function getCookie(name) {
+            var arr, reg = new RegExp("(^| )" + name + "=([^;]*)(;|$)");
+            if (arr = document.cookie.match(reg))
+                return unescape(arr[2]);
+            else
+                return null;
+        }
+
+        function getUserCompany() {
+            var c = getCookie("YlwUser");
+            var d = eval('[' + c + ']');
+            CompanyID = d[0].CompanyID;
+            UserID = d[0].UserID;
+            $("#iPreparedBy").val(UserID);
+            $("#CompanyID").val(CompanyID);
+        }
+
+        getUserCompany();
+
+        //GetAlarmNum();
+    </script>
+
+    <script>
+        var overAll = 0;
+        $('#rongjieyang').click(function () {
+            window.location.href = "/znmanager/equipment/DOxygen?PondID=" + overAll;
+        });
+
+        $('#shuiwen').click(function () {
+            window.location.href = "/znmanager/equipment/Temperature?PondID=" + overAll;
+        });
+
+        $('#yanghuadian').click(function () {
+            window.location.href = "/znmanager/equipment/ORP?PondID=" + overAll;
+        });
+
+        $('#phzhi').click(function () {
+            window.location.href = "/znmanager/equipment/PHValue?PondID=" + overAll;
+        });
+
+        $(function () {
+            $('.EquPartFive').get(0).style = 'height:' + $('.EquPartFour').get(0).offsetHeight + 'px'
+            getPondList();
+        })
+
+        var flag_1 = 0, flag_2 = 0;
+        function off_on_input(obj) {
+            var id = obj.id;
+            if (obj.id == "zy-img-1" || obj.id == "zy1") {
+                if (flag_1 == 1) {
+                    layer.msg("请勿点击太快");
+                    return false;
+                } else {
+                    var a, b, c;
+                    a = obj.id;
+                    b = a.substr(0, 1);
+                    c = a.substr(a.length - 1, 1);
+                    if ($('#' + a).get(0).checked == true) {
+                        if (b == "z") {
+                            flag_1 = 1;
+                            UpSwitch('OneOpen', id);
+                        } else if (b == "t") {
+                            flag_1 = 1;
+                            UpSwitch('TwoOpen', id)
+                        }
+                    } else if ($('#' + a).get(0).checked == false) {
+                        if (b == "z") {
+                            flag_1 = 1;
+                            UpSwitch('OneClose', id)
+                        } else if (b == "t") {
+                            flag_1 = 1;
+                            UpSwitch('TwoClose', id)
+                        }
+                    }
+                }// else end
+            } else if (obj.id == "tl-img-1" || obj.id == "tl1") {
+                if (flag_2 == 1) {
+                    layer.msg("请勿点击太快");
+                    return false;
+                } else {
+                    var a, b, c;
+                    a = obj.id;
+                    b = a.substr(0, 1);
+                    c = a.substr(a.length - 1, 1);
+                    if ($('#' + a).get(0).checked == true) {
+                        if (b == "z") {
+                            flag_2 = 1;
+                            UpSwitch('OneOpen', id)
+                        } else if (b == "t") {
+                            flag_2 = 1;
+                            UpSwitch('TwoOpen', id)
+                        }
+                    } else if ($('#' + a).get(0).checked == false) {
+                        if (b == "z") {
+                            flag_2 = 1;
+                            UpSwitch('OneClose', id)
+                        } else if (b == "t") {
+                            flag_2 = 1;
+                            UpSwitch('TwoClose', id)
+                        }
+                    }
+                }// else end
+            }
+
+
+        }
+        var d, e, f, g, h, j;
+        d = $('#zy1').get(0).checked
+
+        g = $('#tl1').get(0).checked
+
+        function off_on_img(obj) {
+            var id = obj.id;
+            if (obj.id == "zy-img-1" || obj.id == "zy1") {
+                if (flag_1 == 1) {
+                    layer.msg("请勿点击太快");
+                    return false;
+                } else {
+                    var a, b, c;
+                    a = obj.id;
+                    b = a.substr(0, 1);
+                    c = a.substr(a.length - 1, 1);
+                    if (b == "z" && c == 1) {
+                        if (d == true) {
+                            $('#zy1').get(0).checked = false;
+                            flag_1 = 1;
+                            UpSwitch('OneClose', id)
+                        } else if (d == false) {
+                            $('#zy1').get(0).checked = true;
+                            flag_1 = 1;
+                            UpSwitch('OneOpen', id)
+                        }
+                    } else if (b == "t" && c == 1) {
+                        if (g == true) {
+                            $('#tl1').get(0).checked = false;
+                            flag_1 = 1;
+                            UpSwitch('TwoClose', id)
+
+                        } else if (g == false) {
+                            $('#tl1').get(0).checked = true;
+                            flag_1 = 1;
+                            UpSwitch('TwoOpen', id)
+                        }
+                    }
+                    d = $('#zy1').get(0).checked
+                    g = $('#tl1').get(0).checked
+                }
+            } else if (obj.id == "tl-img-1" || obj.id == "tl1") {
+                if (flag_2 == 1) {
+                    layer.msg("请勿点击太快");
+                    return false;
+                } else {
+                    var a, b, c;
+                    a = obj.id;
+                    b = a.substr(0, 1);
+                    c = a.substr(a.length - 1, 1);
+                    if (b == "z" && c == 1) {
+                        if (d == true) {
+                            $('#zy1').get(0).checked = false;
+                            flag_2 = 1;
+                            UpSwitch('OneClose', id)
+                        } else if (d == false) {
+                            $('#zy1').get(0).checked = true;
+                            flag_2 = 1;
+                            UpSwitch('OneOpen', id)
+                        }
+                    } else if (b == "t" && c == 1) {
+                        if (g == true) {
+                            $('#tl1').get(0).checked = false;
+                            flag_2 = 1;
+                            UpSwitch('TwoClose', id)
+
+                        } else if (g == false) {
+                            $('#tl1').get(0).checked = true;
+                            flag_2 = 1;
+                            UpSwitch('TwoOpen', id)
+                        }
+                    }
+                    d = $('#zy1').get(0).checked
+                    g = $('#tl1').get(0).checked
+                }
+            }
+
+
+        }
+        //登录触发
+
+        //加载塘口列表 默认全部是有设备塘口？
+        function getPondList() {
+
+            $.getJSON("/ZNManager/Equipment/GetPondList",
+                { companyid: CompanyID, Equipment: true },
+                function (data) {
+
+                    $("#pondSelect option").remove();
+                    if (getCookie("PondSelected")) {
+                        var PondSelected = getCookie("PondSelected");
+                    }
+                    if (data && data.type == 1 && data.data != "0") {
+                        var htmlstr = "";
+                        for (var i = 0; i < data.data.length; i++) {
+                            if (PondSelected == data.data[i].PondID) {
+                                htmlstr += "<option selected value=" + data.data[i].PondID + " data-n='" + data.data[i].name + "'>" + data.data[i].cPondName + "</option>"
+                            } else {
+                                htmlstr += "<option value=" + data.data[i].PondID + " data-n='" + data.data[i].name + "'>" + data.data[i].cPondName + "</option>"
+                            }
+                        }
+                        $("#pondSelect").append(htmlstr);
+                        $("#pondSelect").selectpicker('refresh');
+                        //默认加载
+
+                        getAlarmBound();
+                        getAlarm();
+                        //定时六分钟刷新页面
+                        setInterval(getAlarm, 6 * 60 * 1000);
+                    } else {
+                        $('#noneControl').removeClass("dis-none");
+                        $('body').addClass("temp");
+                        $(".dis-Main").addClass("dis-none");
+                    }
+                })
+        }
+        //切换塘口  切换设置数据
+        $("#pondSelect").change(function (e) {
+            console.log(e);
+            overAll = $("#pondSelect").val();
+            getAlarmBound();
+            getAlarm();
+        });
+
+        //刷新检测数据
+        function pushhtml(str) {
+
+            if (str && str.split("|").length == 4 || str.split("|").length == 8) {
+                strlist = str.split("|");
+                if (strlist.length == 8) {
+                    //处理八组数据
+                    strlist.splice(8, 1);
+                    strlist.splice(7, 1);
+                    strlist.splice(2, 1);
+                    strlist.splice(1, 1);
+                }
+                $(".DO").text(strlist[0]);
+                if (parseInt($("#DO_max").text()) >= parseInt(strlist[0]) && parseInt($("#DO_min").text()) <= parseInt(strlist[0])) {
+                    $("#DO-img").get(0).src = "../../Images/assets/img/Nxin/溶解氧@2x.png";
+                } else {
+                    //`$("#DO-img").get(0).src = "../../Images/assets/img/Nxin/溶解氧-异常.png";
+                }
+                $(".water_temP").text(strlist[1]);
+                if (parseInt($("#water_max").text()) >= parseInt(strlist[1]) && parseInt($("#water_min ").text()) <= parseInt(strlist[1])) {
+                    $("#water_temP-img").get(0).src = "../../Images/assets/img/Nxin/水温@2x.png";
+                } else {
+                    //$("#water_temP-img").get(0).src = "../../Images/assets/img/Nxin/水温-异常.png";
+                }
+
+                $(".PH").text(strlist[2]);
+                if (parseInt($("#PH_max").text()) >= parseInt(strlist[2]) && parseInt($("#PH_min").text()) <= parseInt(strlist[2])) {
+                    $("#PH-img").get(0).src = "../../Images/assets/img/Nxin/pH@2x.png";
+                } else {
+                    //$("#PH-img").get(0).src = "../../Images/assets/img/Nxin/ph-异常.png";
+                }
+                $(".oxydic").text(strlist[3]);
+                if (parseInt($("#ORP_max").text()) >= parseInt(strlist[3]) && parseInt($("#ORP_min").text()) <= parseInt(strlist[3])) {
+                    $("#oxydic-img").get(0).src = "../../Images/assets/img/Nxin/氧化电还原@2x.png";
+                } else {
+                    //$("#oxydic-img").get(0).src = "../../Images/assets/img/Nxin/氧化电还原-异常.png";
+                }
+            } else {
+                $(".DO").text('--');
+                $(".water_temP").text('--');
+                $(".PH").text('--');
+                $(".oxydic").text('--');
+                $("#DO-img").get(0).src = "../../Images/assets/img/Nxin/DO_wrong.png";
+                $("#water_temP-img").get(0).src = "../../Images/assets/img/Nxin/water_wrong.png";
+                $("#PH-img").get(0).src = "../../Images/assets/img/Nxin/PH_wrong.png";
+                $("#oxydic-img").get(0).src = "../../Images/assets/img/Nxin/ORP_wrong.png";
+            }
+
+        }
+        //获取页面最新数据状态
+        function getAlarm() {
+            var cEquipmentNum = $("#pondSelect").find("option:checked").attr("data-n");
+            var Pond_value = $("#pondSelect").find("option:checked").attr("value");
+            setCookie("PondSelected", Pond_value, 5);
+            //塘口id
+            var pondID = $("#pondSelect").val();
+            $.getJSON("/ZNManager/Equipment/GetRtuAction", { UserID: UserID, cEquipmentNum: cEquipmentNum },
+                function (data) {
+                    if (data && data.type == 1) {
+                        var r1 = data.data.split("#&")[1];
+                        pushhtml(r1);
+                        //设置数值
+                        var type = data.data.split("#&")[4].split("|");
+                        //根据状态设置开个
+                        if (type[0] == "01") {
+                            $('#zy1').get(0).checked = true;
+                            $('#zy-img-1').get(0).src = '/Images/assets/img/Nxin/增氧机@2x.png';
+                        }
+                        else {
+                            $('#zy1').get(0).checked = false;
+                            $('#zy-img-1').get(0).src = '/Images/assets/img/Nxin/增氧机@2x.png';
+                        }
+                        if (type[1] == "01") {
+                            $('#tl-img-1').get(0).src = '/Images/assets/img/Nxin/投料机.png';
+                            $('#tl1').get(0).checked = true;
+                        }
+                        else {
+                            $('#tl-img-1').get(0).src = '/Images/assets/img/Nxin/投料机.png';
+                            $('#tl1').get(0).checked = false;
+                        }
+                    }
+                    else if (data && data.type == 0) {
+                        var r1 = data.data;
+                        pushhtml(r1);
+                        //设置数值
+                        layer.msg("设备离线");
+                        $('#tl-img-1').get(0).src = '/Images/assets/img/Nxin/投料机.png';
+                        $('#zy-img-1').get(0).src = '/Images/assets/img/Nxin/增氧机@2x.png';
+                        $('#zy1').get(0).checked = false;
+                        $('#tl1').get(0).checked = false;
+                    }
+                    else {
+                        var r1 = data.data;
+                        pushhtml(r1);
+                        $('#tl-img-1').get(0).src = '/Images/assets/img/Nxin/投料机.png';
+                        $('#zy-img-1').get(0).src = '/Images/assets/img/Nxin/增氧机@2x.png';
+                        $('#zy1').get(0).checked = false;
+                        $('#tl1').get(0).checked = false;
+
+                        layer.msg("设备超时");
+                    }
+                })
+        }
+
+        //获取上下限设置
+        function getAlarmBound() {
+            //塘口id
+            overAll = $("#pondSelect").val();
+            var pondID = $("#pondSelect").val();
+            $.getJSON("/ZNManager/Equipment/GetAlarmBound",
+                { pondID: pondID, type: 1 },
+                function (data) {
+                    if (data && data.type == 1) {
+                        for (var i = 0; i < data.data.length; i++) {
+                            for (var i = 0; i < data.data.length; i++) {
+
+                                $("#DO_min").text(data.data[0].nDOxygenLow);
+                                $("#ORP_min").text(data.data[0].nORPLOW);
+                                $("#PH_min").text(data.data[0].nPHValueLow);
+                                $("#water_min").text(data.data[0].nTemperatureLow);
+
+                                $("#DO_max").text(data.data[0].nDOxygenUpper);
+                                $("#ORP_max").text(data.data[0].nORPUpper);
+                                $("#PH_max").text(data.data[0].nPHValueUpper);
+                                $("#water_max").text(data.data[0].nTemperatureUpper);
+                            }
+                        }
+                    }
+                })
+        }
+
+        function blank() {
+
+        }
+        ////获取页面最新数据状态
+        function UpSwitch(iEquipmentType, id) {
+
+            if (id.length > 4) {
+                $('#' + id).get(0).onclick = blank();
+            } else {
+                $('#' + id).get(0).disabled = true;
+            }
+            //塘口id OneOpen OneClose TwoOpen TwoClose
+            var cEquipmentNum = $("#pondSelect").find("option:checked").attr("data-n");
+            $.post("/znmanager/Equipment/UpEquimentSwitch",
+                { userid: UserID, companyid: CompanyID, cEquipmentNum: cEquipmentNum, iEquipmentType: iEquipmentType },
+                function (data) {
+                    if (data && data.type == 1) {
+
+                        switch (iEquipmentType) {
+                            case 'OneOpen':
+                                layer.msg("增氧机开启成功");
+                                //$('#zy-img-1').get(0).src = '/Images/assets/img/Nxin/增氧机@2x.png';
+                                $('#zy-img-1').rotate();
+                                $('#zy1').get(0).checked = true;
+                                $('#' + id).get(0).disabled = false;
+                                break;
+                            case 'OneClose':
+                                layer.msg("增氧机关闭成功");
+                                //$('#zy-img-1').get(0).src = '/Images/assets/img/Nxin/增氧机@2x.png';
+                                clearInterval(Rotate);
+                                $('#zy1').get(0).checked = false;
+                                break;
+                            case 'TwoOpen':
+                                layer.msg("投料机开启成功");
+                                $('#tl-img-1').get(0).src = '/Images/assets/img/Nxin/投料机.png';
+                                $('#tl1').get(0).checked = true;
+                                break;
+                            case 'TwoClose':
+                                layer.msg("投料机关闭成功");
+                                $('#tl-img-1').get(0).src = '/Images/assets/img/Nxin/投料机.png';
+                                $('#tl1').get(0).checked = false;
+                                break;
+                        }
+                    } else if (data && data.type == 2) {
+                        switch (iEquipmentType) {
+
+                            case 'OneOpen':
+                                layer.msg(data.message + "，增氧机开启失败");
+                                $('#zy-img-1').get(0).src = '/Images/assets/img/Nxin/增氧机@2x.png';
+                                $('#zy1').get(0).checked = false;
+                                break;
+                            case 'OneClose': layer.msg(data.message + "，增氧机关闭失败");
+                                $('#zy-img-1').get(0).src = '/Images/assets/img/Nxin/增氧机@2x.png';
+                                $('#zy1').get(0).checked = true;
+                                break;
+                            case 'TwoOpen': layer.msg(data.message + "，投料机开启失败");
+                                $('#tl-img-1').get(0).src = '/Images/assets/img/Nxin/投料机.png';
+                                $('#tl1').get(0).checked = false;
+                                break;
+                            case 'TwoClose': layer.msg(data.message + "，投料机关闭失败");
+                                $('#tl-img-1').get(0).src = '/Images/assets/img/Nxin/投料机.png';
+                                $('#tl1').get(0).checked = true;
+                                break;
+                        }
+                    } else {
+
+                        layer.msg("操作失败");
+                        switch (iEquipmentType) {
+
+                            case 'OneOpen': layer.msg("增氧机开启失败");
+                                $('#zy-img-1').get(0).src = '/Images/assets/img/Nxin/增氧机@2x.png';
+                                $('#zy1').get(0).checked = false;
+                                break;
+                            case 'OneClose': layer.msg("增氧机关闭失败");
+                                $('#zy-img-1').get(0).src = '/Images/assets/img/Nxin/增氧机@2x.png';
+                                $('#zy1').get(0).checked = true;
+                                break;
+                            case 'TwoOpen': layer.msg("投料机开启失败");
+                                $('#tl-img-1').get(0).src = '/Images/assets/img/Nxin/投料机.png';
+                                $('#tl1').get(0).checked = false;
+                                break;
+                            case 'TwoClose': layer.msg("投料机关闭失败");
+                                $('#tl-img-1').get(0).src = '/Images/assets/img/Nxin/投料机.png';
+                                $('#tl1').get(0).checked = true;
+                                break;
+                        }
+
+                    }
+
+                    flag_1 = 0;
+                    flag_2 = 0;
+
+                    if (id.length > 4) {
+                        $('#' + id).get(0).onclick = off_on_img(this);
+                        //console.log($('#' + id).get(0).onclick);
+                        $('#' + id).click(function () {
+                            off_on_img(this);
+                        })
+                    } else {
+                        $('#' + id).get(0).disabled = false;
+                    }
+
+
+
+                })
+        }
+        //警报设置
+        function goBound() {
+            var pondID = $("#pondSelect").val();
+            var cEquipmentNum = $("#pondSelect").find("option:checked").attr("data-n");
+            window.location.href = '/znmanager/Equipment/Alarmbound?pondID=' + pondID + '&cEquipmentNum=' + cEquipmentNum;
+        }
+        //刷新触发
+        function reLoad() {
+            getAlarm();
+        }
+
+        function setCookie(key, value, t) {
+            if (t > 0) {
+                var oDate = new Date();
+                oDate.setDate(oDate.getDate() + t);
+                document.cookie = key + "=" + value + "; expires=" + oDate.toDateString();
+            }
+        }
+
+        function getCookie(key) {
+            var arr1 = document.cookie.split("; "); //由于cookie是通过一个分号+空格的形式串联起来的，所以这里需要先按分号空格截断,变成[name=Jack,pwd=123456,age=22]数组类型；
+            for (var i = 0; i < arr1.length; i++) {
+                var arr2 = arr1[i].split("="); //通过=截断，把name=Jack截断成[name,Jack]数组；
+                if (arr2[0] == key) {
+                    return decodeURI(arr2[1]);
+                }
+            }
+        }
+
+
+        var ele, Rotate;
+
+        //自定义函数
+        $.fn.extend({
+
+            rotate: function () {
+                ele = this;
+                Rotate = setInterval('singleRotate()', 20);
+            }
+        });
+
+        //初始角度
+        var degree = 0;
+
+        //单次旋转
+        function singleRotate() {
+            //一次增加50度
+            degree = degree + 50 * Math.PI / 180;
+            ele.css("transform", "rotate(" + degree + "deg)");
+        }
+
+    </script>
+
+</body>
+
+</html>

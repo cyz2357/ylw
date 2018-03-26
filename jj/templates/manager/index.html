@@ -1,0 +1,68 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>渔联网-登录</title>
+    <link href="/static/css/public.css" rel="stylesheet" />
+    <link href="/static/css/Nxin.css" rel="stylesheet" />
+    <script src="/static/js/jquery-1.10.2.js"></script>
+    <script src="/static/js/public.js"></script>
+
+
+</head>
+<body>
+<div class="login">
+    <div class="w1000 lg_top  clearfix">
+        <h1 class="left"><a href="/home/Index">
+            <img src="/static/img/logo.png" /></a></h1>
+        <div class="m_gz right"><a href="javascript:;">渔联网</a></div>
+    </div>
+    <div class="lgbanner">
+        <div class="slide-main" id="touchMain">
+            <div class="slide-box" id="slideContent">
+                <div class="slide" id="bgstylec" style="background: url(/static/img/banner.png)no-repeat center 0px;"></div>
+                <div class="slide" id="bgstylea" style="background: url(/static/img/banner1.png) no-repeat center 0px;"></div>
+                <div class="slide" id="bgstyleb" style="background: url(/static/img/banner2.png) no-repeat center 0px;"></div>
+            </div>
+            <div class="item">
+                <a class="cur" stat="item1001" href="javascript:;"></a><a href="javascript:;" stat="item1002"></a><a href="javascript:;" stat="item1003"></a>
+            </div>
+            <div class="w1000 lgin">
+                <div class="lg"></div>
+                <div class="lg_form">
+                    <div class="lg_tit f20">登录渔联网</div>
+                    <form action="https://cas.nxin.com/cas/v1/tickets/login" id="login" method="post">
+                        <input type="hidden" name="password" id="password2" />
+                        <input type="hidden" name="systemId" value="38" />
+                        <input name="service" type="hidden" value="http://ylw.nxin.com/Account/CheckIdentity?backurl=" />
+                        <input type="hidden" name="loginTicket" />
+                        <input name="login_from" type="hidden" value="http://ylw.nxin.com/Account/Login" />
+
+                        <div class="lg_del">
+                            <p><input type="text" id="username" name="username" placeholder="用户名" /></p>
+                            <p><input type="password" id="password" placeholder="密码" /></p>
+                            <p class="t_right fpwd"><a href="javascript:void(0)" id="btnYansi">系统演示</a><a id="regLink" target="_blank" href='http://ylw.nxin.com/Account/RequestUser'>注册</a>|<a href="https://passport.nxin.com/" class="end">忘记密码？</a></p>
+                            <p class="btn"><button id="btnLogin" type="button" class="f16">登&nbsp;录</button></p>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div>
+    <div class="footer">
+        <p>北京农信互联科技有限公司</p>
+        <p>联系电话：400-810-5353 传真：010-82856430</p>
+        <p>联系地址：北京市海淀区中关村大街27号中关村大厦16层 邮编：100080</p>
+        <p>2013-2018 农信互联版权所有</p>
+    </div>
+
+</div>
+</body>
+</html>
+
+
+
